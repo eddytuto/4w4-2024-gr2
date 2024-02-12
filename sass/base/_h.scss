@@ -8,13 +8,15 @@ https://clamp.font-size.app/?config=eyJyb290IjoiMTYiLCJtaW5XaWR0aCI6IjUwMHB4Iiwi
 
 h1 {
     font-size: clamp(1.5rem, -2.875rem + 14vw, 5rem);
-    color : rgba(#092918, .3);
+
 }
 h2 { 
     font-size: clamp(1rem, -0.5714rem + 6.2857vw, 3.75rem);
-    color : rgba(#092918, .7);
+
 }
-h3 {}
+h3 {
+
+}
 h4 {}
 h5 {}
 h6 {}

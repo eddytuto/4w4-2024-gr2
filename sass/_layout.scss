@@ -16,7 +16,7 @@ body {
 // flex : grow shrink basis
     flex : 0 1 900px;
     // border : 1px solid #aaa;
-    background-color : rgba(#1754d7, .1 );
+    background-color : rgba(#000, .05 );
     padding : 5rem 1rem;
 }
 
@@ -24,16 +24,21 @@ body {
 
 #entete {
     background-color: var(--couleur-arriere-entete);
+    color : var(--couleur-entete);
 }
 #accueil {
     background-color: var(--couleur-arriere-accueil);
+    color : var(--couleur-accueil);
 }
 #galerie {
     background-color: var(--couleur-arriere-galerie);
+    color : var(--couleur-galerie);
 }
 #evenement {
     background-color: var(--couleur-arriere-evenement);
+    color : var(--couleur-evenement);
 }
 #footer {
     background-color: var(--couleur-arriere-footer);
+    color : var(--couleur-footer);
 }

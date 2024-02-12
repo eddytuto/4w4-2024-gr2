@@ -20,11 +20,23 @@ Ce thème a été développé dans le cadre du cours 4W4
 https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 */
 :root {
-  --couleur-arriere-entete: #77c2e5;
-  --couleur-arriere-accueil: #c1d32d;
-  --couleur-arriere-evenement: #dd8211;
-  --couleur-arriere-galerie: #8cee99;
-  --couleur-arriere-footer: #1d3f9f;
+  /*
+      --couleur-arriere-entete: #77c2e5;
+      --couleur-arriere-accueil: #c1d32d;
+      --couleur-arriere-evenement: #dd8211;
+      --couleur-arriere-galerie: #8cee99;
+      --couleur-arriere-footer: #1d3f9f;
+  */
+  --couleur-arriere-entete: hsl(0, 100%, 50%);
+  --couleur-arriere-accueil: hsl(60,100%, 50%);
+  --couleur-arriere-evenement: hsl(120,100%,50%);
+  --couleur-arriere-galerie: hsl(180,100%,50%);
+  --couleur-arriere-footer: hsl(240,100%,50%);
+  --couleur-entete: hsl(0, 100%, 15%);
+  --couleur-accueil: hsl(60,100%, 15%);
+  --couleur-evenement: hsl(120,100%,15%);
+  --couleur-galerie: hsl(180,100%,15%);
+  --couleur-footer: hsl(240,100%,15%);
 }
 
 /* ////////////////////////////////////////// */
@@ -39,12 +51,10 @@ https://clamp.font-size.app/?config=eyJyb290IjoiMTYiLCJtaW5XaWR0aCI6IjUwMHB4Iiwi
 */
 h1 {
   font-size: clamp(1.5rem, -2.875rem + 14vw, 5rem);
-  color: rgba(9, 41, 24, 0.3);
 }
 
 h2 {
   font-size: clamp(1rem, -0.5714rem + 6.2857vw, 3.75rem);
-  color: rgba(9, 41, 24, 0.7);
 }
 
 /* ////////////////////////////////////////// */
@@ -66,26 +76,31 @@ body {
 .global > header,
 .global > footer {
   flex: 0 1 900px;
-  background-color: rgba(23, 84, 215, 0.1);
+  background-color: rgba(0, 0, 0, 0.05);
   padding: 5rem 1rem;
 }
 
 #entete {
   background-color: var(--couleur-arriere-entete);
+  color: var(--couleur-entete);
 }
 
 #accueil {
   background-color: var(--couleur-arriere-accueil);
+  color: var(--couleur-accueil);
 }
 
 #galerie {
   background-color: var(--couleur-arriere-galerie);
+  color: var(--couleur-galerie);
 }
 
 #evenement {
   background-color: var(--couleur-arriere-evenement);
+  color: var(--couleur-evenement);
 }
 
 #footer {
   background-color: var(--couleur-arriere-footer);
+  color: var(--couleur-footer);
 }/*# sourceMappingURL=style.css.map */
