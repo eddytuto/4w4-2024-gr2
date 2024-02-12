@@ -10,17 +10,37 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
     --couleur-arriere-galerie: #8cee99;
     --couleur-arriere-footer: #1d3f9f;
 */
-    --couleur-arriere-entete: hsl(0, 100%, 50%);
-    --couleur-arriere-accueil: hsl(60,100%, 50%);
-    --couleur-arriere-evenement: hsl(120,100%,50%);
-    --couleur-arriere-galerie: hsl(180,100%,50%);
-    --couleur-arriere-footer: hsl(240,100%,50%);
 
-    --couleur-entete: hsl(0, 100%, 15%);
-    --couleur-accueil: hsl(60,100%, 15%);
-    --couleur-evenement: hsl(120,100%,15%);
-    --couleur-galerie: hsl(180,100%,15%);
-    --couleur-footer: hsl(240,100%,15%);
+--nb-element : 5;
+--increment-angle : calc(360 / var(--nb-element));
+/* 360/5 = 72) */
+--angle-initial : 180;
+/* couleur arrière plan */
+--s-couleur-arriere : 100%; // saturation
+--l-couleur-arriere : 50%;  // luminosité
+/* couleur avant plan */
+--s-couleur : 100%; // saturation
+--l-couleur : 15%; // luminosité
+
+--hu1 : var(--angle-initial);
+--hu2 : calc(var(--hu1) + var(--increment-angle));
+--hu3 : calc(var(--hu2) + var(--increment-angle));
+--hu4 : calc(var(--hu3) + var(--increment-angle));
+--hu5 : calc(var(--hu4) + var(--increment-angle));
+
+
+
+    --couleur-arriere-entete: hsl(var(--hu1), var(--s-couleur-arriere), var(--l-couleur-arriere));
+    --couleur-arriere-accueil: hsl(var(--hu2),var(--s-couleur-arriere),  var(--l-couleur-arriere));
+    --couleur-arriere-evenement: hsl(var(--hu3),var(--s-couleur-arriere), var(--l-couleur-arriere));
+    --couleur-arriere-galerie: hsl(var(--hu4),var(--s-couleur-arriere), var(--l-couleur-arriere));
+    --couleur-arriere-footer: hsl(var(--hu5),var(--s-couleur-arriere), var(--l-couleur-arriere));
+
+    --couleur-entete: hsl(var(--hu1), var(--s-couleur), var(--l-couleur));
+    --couleur-accueil: hsl(var(--hu2), var(--s-couleur), var(--l-couleur));
+    --couleur-evenement: hsl(var(--hu3), var(--s-couleur),var(--l-couleur));
+    --couleur-galerie: hsl(var(--hu4), var(--s-couleur),var(--l-couleur));
+    --couleur-footer: hsl(var(--hu5), var(--s-couleur),var(--l-couleur));
 
 
 }
