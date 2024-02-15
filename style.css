@@ -36,7 +36,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
   --l-couleur-arriere: 50%;
   /* couleur avant plan */
   --s-couleur: 100%;
-  --l-couleur: 15%;
+  --l-couleur: 80%;
   --hu1: var(--angle-initial);
   --hu2: calc(var(--hu1) + var(--increment-angle));
   --hu3: calc(var(--hu2) + var(--increment-angle));
