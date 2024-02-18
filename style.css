@@ -30,7 +30,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
   --nb-element: 5;
   --increment-angle: calc(360 / var(--nb-element));
   /* 360/5 = 72) */
-  --angle-initial: 180;
+  --angle-initial: 224;
   /* couleur arrière plan */
   --s-couleur-arriere: 100%;
   --l-couleur-arriere: 50%;
@@ -42,16 +42,25 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
   --hu3: calc(var(--hu2) + var(--increment-angle));
   --hu4: calc(var(--hu3) + var(--increment-angle));
   --hu5: calc(var(--hu4) + var(--increment-angle));
-  --couleur-arriere-entete: hsl(var(--hu1), var(--s-couleur-arriere), var(--l-couleur-arriere));
-  --couleur-arriere-accueil: hsl(var(--hu2),var(--s-couleur-arriere), var(--l-couleur-arriere));
-  --couleur-arriere-evenement: hsl(var(--hu3),var(--s-couleur-arriere), var(--l-couleur-arriere));
-  --couleur-arriere-galerie: hsl(var(--hu4),var(--s-couleur-arriere), var(--l-couleur-arriere));
-  --couleur-arriere-footer: hsl(var(--hu5),var(--s-couleur-arriere), var(--l-couleur-arriere));
-  --couleur-entete: hsl(var(--hu1), var(--s-couleur), var(--l-couleur));
-  --couleur-accueil: hsl(var(--hu2), var(--s-couleur), var(--l-couleur));
-  --couleur-evenement: hsl(var(--hu3), var(--s-couleur),var(--l-couleur));
-  --couleur-galerie: hsl(var(--hu4), var(--s-couleur),var(--l-couleur));
-  --couleur-footer: hsl(var(--hu5), var(--s-couleur),var(--l-couleur));
+  /*
+      --couleur-arriere-entete: hsl(var(--hu1), var(--s-couleur-arriere), var(--l-couleur-arriere));
+      --couleur-arriere-accueil: hsl(var(--hu2),var(--s-couleur-arriere),  var(--l-couleur-arriere));
+      --couleur-arriere-evenement: hsl(var(--hu3),var(--s-couleur-arriere), var(--l-couleur-arriere));
+      --couleur-arriere-galerie: hsl(var(--hu4),var(--s-couleur-arriere), var(--l-couleur-arriere));
+      --couleur-arriere-footer: hsl(var(--hu5),var(--s-couleur-arriere), var(--l-couleur-arriere));
+
+      --couleur-entete: hsl(var(--hu1), var(--s-couleur), var(--l-couleur));
+      --couleur-accueil: hsl(var(--hu2), var(--s-couleur), var(--l-couleur));
+      --couleur-evenement: hsl(var(--hu3), var(--s-couleur),var(--l-couleur));
+      --couleur-galerie: hsl(var(--hu4), var(--s-couleur),var(--l-couleur));
+      --couleur-footer: hsl(var(--hu5), var(--s-couleur),var(--l-couleur));
+  */
+  --hu2: calc(var(--hu1) + 180 );
+  --couleur-arriere-entete: hsl(var(--hu1), var(--s-couleur-arriere), 60%);
+  --couleur-arriere-accueil: hsl(var(--hu1),var(--s-couleur-arriere), 65%);
+  --couleur-arriere-evenement: hsl(var(--hu1),var(--s-couleur-arriere), 70%);
+  --couleur-arriere-galerie: hsl(var(--hu2),var(--s-couleur-arriere), 75%);
+  --couleur-arriere-footer: hsl(var(--hu1),var(--s-couleur-arriere), 80%);
 }
 
 /* ////////////////////////////////////////// */
@@ -91,13 +100,13 @@ body {
 .global > header,
 .global > footer {
   flex: 0 1 900px;
-  background-color: rgba(0, 0, 0, 0.05);
   padding: 5rem 1rem;
 }
 
 #entete {
   background-color: var(--couleur-arriere-entete);
   color: var(--couleur-entete);
+  position: relative;
 }
 
 #accueil {
@@ -108,14 +117,51 @@ body {
 #galerie {
   background-color: var(--couleur-arriere-galerie);
   color: var(--couleur-galerie);
+  z-index: 1;
+  background: linear-gradient(180deg, var(--couleur-arriere-accueil) 50%, var(--couleur-arriere-evenement) 50%);
 }
 
 #evenement {
   background-color: var(--couleur-arriere-evenement);
   color: var(--couleur-evenement);
+  position: relative;
 }
 
 #footer {
   background-color: var(--couleur-arriere-footer);
   color: var(--couleur-footer);
+}
+
+.vague {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.vague svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 64px;
+  transform: rotateY(180deg);
+}
+
+.diagonal {
+  position: relative;
+  isolation: isolate;
+}
+
+.diagonal::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  transform: skewY(-5deg);
+  background-color: var(--couleur-arriere-galerie);
 }/*# sourceMappingURL=style.css.map */
