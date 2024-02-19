@@ -30,7 +30,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
   --nb-element: 5;
   --increment-angle: calc(360 / var(--nb-element));
   /* 360/5 = 72) */
-  --angle-initial: 224;
+  --angle-initial: 192;
   /* couleur arrière plan */
   --s-couleur-arriere: 100%;
   --l-couleur-arriere: 50%;
@@ -97,6 +97,12 @@ button {
 /* ////////////////////////////////////////// */
 /* règles de la pagination                             */
 /* ////////////////////////////////////////// */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   display: flex;
   flex-direction: column;
