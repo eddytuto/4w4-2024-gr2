@@ -14,13 +14,15 @@ body {
 .global > header,
 .global > footer{
 // flex : grow shrink basis
-    flex : 0 1 900px;
+    flex : 0 1 1100px;
     // border : 1px solid #aaa;
    // background-color : rgba(#000, .05 );
     padding : 5rem 1rem;
 }
 
-
+.global > header {
+    flex : 0 1 1300px;
+}
 
 #entete {
     background-color: var(--couleur-arriere-entete);

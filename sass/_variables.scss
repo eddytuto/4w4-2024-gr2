@@ -49,6 +49,13 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 --couleur-arriere-galerie: hsl(var(--hu2),var(--s-couleur-arriere), 75%);
 --couleur-arriere-footer: hsl(var(--hu1),var(--s-couleur-arriere), 80%);
 
+--couleur-entete: hsl(var(--hu1), var(--s-couleur-arriere), 20%);
+--couleur-accueil: hsl(var(--hu1),var(--s-couleur-arriere),  25%);
+--couleur-evenement: hsl(var(--hu1),var(--s-couleur-arriere), 30%);
+--couleur-galerie: hsl(var(--hu2),var(--s-couleur-arriere), 35%);
+--couleur-footer: hsl(var(--hu1),var(--s-couleur-arriere), 40%);
+
+
 
 
 }
