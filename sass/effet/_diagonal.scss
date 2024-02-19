@@ -1,3 +1,11 @@
+*, 
+*::before,
+*::after {
+    box-sizing: border-box;
+
+}
+
+
 .diagonal{
     position: relative;
     isolation : isolate;
