@@ -1,0 +1,26 @@
+.entete__header{
+    background-image: url("images/github.png");    
+    background-repeat: no-repeat;
+
+    background-position: 50% 50%;
+    background-size:400px;
+    text-align: center;
+}
+
+.entete__header__button {
+    text-align: center;
+}
+
+@media screen and (min-width:900px){
+    .entete__header{
+    background-position: 100% 50%;
+    text-align: left;
+}
+
+.entete__header__button {
+    text-align: left;
+}
+    
+}
+
+

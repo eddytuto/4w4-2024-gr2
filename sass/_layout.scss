@@ -1,3 +1,14 @@
+*, 
+*::before,
+*::after {
+    box-sizing: border-box;
+
+}
+
+*{
+    margin:0;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -13,19 +24,28 @@ body {
 .global > section,
 .global > header,
 .global > footer{
-// flex : grow shrink basis
-    flex : 0 1 900px;
+    // flex : grow shrink basis
+    flex : 0 1 1100px;
     // border : 1px solid #aaa;
-   // background-color : rgba(#000, .05 );
-    padding : 5rem 1rem;
+    // background-color : rgba(#000, .05 );
+    padding : 10rem 1rem;
+}
+
+.global > header {
+  flex : 0 1 1500px;
+
 }
 
 
 
 #entete {
-    background-color: var(--couleur-arriere-entete);
+     background-color: var(--couleur-arriere-entete);
+ 
+     //  background-image: url("images/github.png");
+     //  background-repeat: no-repeat;
     color : var(--couleur-entete);
     position : relative;
+
 }
 #accueil {
     background-color: var(--couleur-arriere-accueil);

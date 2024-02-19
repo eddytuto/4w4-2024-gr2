@@ -38,9 +38,9 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 
     --couleur-entete: hsl(var(--hu1), var(--s-couleur), var(--l-couleur));
     --couleur-accueil: hsl(var(--hu2), var(--s-couleur), var(--l-couleur));
-    --couleur-evenement: hsl(var(--hu3), var(--s-couleur),var(--l-couleur));
-    --couleur-galerie: hsl(var(--hu4), var(--s-couleur),var(--l-couleur));
-    --couleur-footer: hsl(var(--hu5), var(--s-couleur),var(--l-couleur));
+    --couleur-evenement: hsl(var(--hu3), var(--s-couleur), var(--l-couleur));
+    --couleur-galerie: hsl(var(--hu4), var(--s-couleur), var(--l-couleur));
+    --couleur-footer: hsl(var(--hu5), var(--s-couleur), var(--l-couleur));
 */
 --hu2 : calc(var(--hu1) + 180 ); // couleur complémentaire
 --couleur-arriere-entete: hsl(var(--hu1), var(--s-couleur-arriere), 60%);
@@ -48,6 +48,27 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 --couleur-arriere-evenement: hsl(var(--hu1),var(--s-couleur-arriere), 70%);
 --couleur-arriere-galerie: hsl(var(--hu2),var(--s-couleur-arriere), 75%);
 --couleur-arriere-footer: hsl(var(--hu1),var(--s-couleur-arriere), 80%);
+
+--couleur-entete: hsl(var(--hu1), var(--s-couleur-arriere), 20%);
+--couleur-ombrage: hsl(var(--hu1), var(--s-couleur-arriere), 50%);
+--couleur-accueil: hsl(var(--hu1),var(--s-couleur-arriere),  25%);
+--couleur-evenement: hsl(var(--hu1),var(--s-couleur-arriere), 30%);
+--couleur-galerie: hsl(var(--hu2),var(--s-couleur-arriere), 35%);
+--couleur-footer: hsl(var(--hu1),var(--s-couleur-arriere), 45%);
+
+
+--couleur-lien: hsl(var(--hu2),var(--s-couleur-arriere), 45%);
+--couleur-lien-hover: hsl(var(--hu2),var(--s-couleur-arriere), 55%);
+--couleur-lien-visited: hsl(var(--hu2),var(--s-couleur-arriere), 60%);
+
+--couleur-bouton-1-active : hsl(var(--hu2),var(--s-couleur-arriere), 35%);
+--couleur-bouton-2-active : hsl(var(--hu2),var(--s-couleur-arriere), 45%);
+--couleur-bouton-1 : hsl(var(--hu2),var(--s-couleur-arriere), 55%);
+--couleur-bouton-2 : hsl(var(--hu2),var(--s-couleur-arriere), 65%);
+--couleur-bouton-hover-1 : hsl(var(--hu2),var(--s-couleur-arriere), 75%);
+--couleur-bouton-hover-2 : hsl(var(--hu2),var(--s-couleur-arriere), 80%);
+--couleur-bouton-text : hsl(var(--hu2),var(--s-couleur-arriere), 20%);
+--couleur-bouton-2 : hsl(var(--hu2),var(--s-couleur-arriere), 49%);
 
 
 

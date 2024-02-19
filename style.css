@@ -51,9 +51,9 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 
       --couleur-entete: hsl(var(--hu1), var(--s-couleur), var(--l-couleur));
       --couleur-accueil: hsl(var(--hu2), var(--s-couleur), var(--l-couleur));
-      --couleur-evenement: hsl(var(--hu3), var(--s-couleur),var(--l-couleur));
-      --couleur-galerie: hsl(var(--hu4), var(--s-couleur),var(--l-couleur));
-      --couleur-footer: hsl(var(--hu5), var(--s-couleur),var(--l-couleur));
+      --couleur-evenement: hsl(var(--hu3), var(--s-couleur), var(--l-couleur));
+      --couleur-galerie: hsl(var(--hu4), var(--s-couleur), var(--l-couleur));
+      --couleur-footer: hsl(var(--hu5), var(--s-couleur), var(--l-couleur));
   */
   --hu2: calc(var(--hu1) + 180 );
   --couleur-arriere-entete: hsl(var(--hu1), var(--s-couleur-arriere), 60%);
@@ -61,6 +61,23 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
   --couleur-arriere-evenement: hsl(var(--hu1),var(--s-couleur-arriere), 70%);
   --couleur-arriere-galerie: hsl(var(--hu2),var(--s-couleur-arriere), 75%);
   --couleur-arriere-footer: hsl(var(--hu1),var(--s-couleur-arriere), 80%);
+  --couleur-entete: hsl(var(--hu1), var(--s-couleur-arriere), 20%);
+  --couleur-ombrage: hsl(var(--hu1), var(--s-couleur-arriere), 50%);
+  --couleur-accueil: hsl(var(--hu1),var(--s-couleur-arriere), 25%);
+  --couleur-evenement: hsl(var(--hu1),var(--s-couleur-arriere), 30%);
+  --couleur-galerie: hsl(var(--hu2),var(--s-couleur-arriere), 35%);
+  --couleur-footer: hsl(var(--hu1),var(--s-couleur-arriere), 45%);
+  --couleur-lien: hsl(var(--hu2),var(--s-couleur-arriere), 45%);
+  --couleur-lien-hover: hsl(var(--hu2),var(--s-couleur-arriere), 55%);
+  --couleur-lien-visited: hsl(var(--hu2),var(--s-couleur-arriere), 60%);
+  --couleur-bouton-1-active: hsl(var(--hu2),var(--s-couleur-arriere), 35%);
+  --couleur-bouton-2-active: hsl(var(--hu2),var(--s-couleur-arriere), 45%);
+  --couleur-bouton-1: hsl(var(--hu2),var(--s-couleur-arriere), 55%);
+  --couleur-bouton-2: hsl(var(--hu2),var(--s-couleur-arriere), 65%);
+  --couleur-bouton-hover-1: hsl(var(--hu2),var(--s-couleur-arriere), 75%);
+  --couleur-bouton-hover-2: hsl(var(--hu2),var(--s-couleur-arriere), 80%);
+  --couleur-bouton-text: hsl(var(--hu2),var(--s-couleur-arriere), 20%);
+  --couleur-bouton-2: hsl(var(--hu2),var(--s-couleur-arriere), 49%);
 }
 
 /* ////////////////////////////////////////// */
@@ -75,15 +92,76 @@ https://clamp.font-size.app/?config=eyJyb290IjoiMTYiLCJtaW5XaWR0aCI6IjUwMHB4Iiwi
 */
 h1 {
   font-size: clamp(1.5rem, -2.875rem + 14vw, 5rem);
+  text-shadow: 7px 8px 1px var(--couleur-ombrage);
 }
 
 h2 {
   font-size: clamp(1rem, -0.5714rem + 6.2857vw, 3.75rem);
 }
 
+h3 {
+  font-size: clamp(1rem, -0.25rem + 4vw, 2.5rem);
+}
+
+p {
+  font-size: clamp(1rem, 0.4792rem + 1.6667vw, 1.625rem);
+}
+
+button {
+  background-image: linear-gradient(163deg, var(--couleur-bouton-1), var(--couleur-bouton-2));
+  font-size: clamp(1.5rem, 0.1458rem + 4.3333vw, 3.125rem);
+  border-radius: 10px;
+  border: 2ps solid #555;
+  padding: 16px 24px;
+  margin: 20px;
+  transition: transform 0.1s;
+  transform: translateY(0);
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+}
+button:hover {
+  background-image: linear-gradient(163deg, var(--couleur-bouton-hover-1), var(--couleur-bouton-hover-2));
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+button:active {
+  transform: translateY(0);
+  background-image: linear-gradient(163deg, var(--couleur-bouton-active-1), var(--couleur-bouton-active-2));
+}
+
+/*
+https://getcssscan.com/css-buttons-examples
+*/
+a {
+  color: var(--couleur-lien);
+}
+a:visited {
+  color: var(--couleur-lien-visited);
+}
+a:hover, a:focus, a:active {
+  color: var(--couleur-lien-hover);
+}
+a:focus {
+  outline: thin dotted;
+}
+a:hover, a:active {
+  outline: 0;
+}
+
 /* ////////////////////////////////////////// */
 /* règles de la pagination                             */
 /* ////////////////////////////////////////// */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -99,8 +177,12 @@ body {
 .global > section,
 .global > header,
 .global > footer {
-  flex: 0 1 900px;
-  padding: 5rem 1rem;
+  flex: 0 1 1100px;
+  padding: 10rem 1rem;
+}
+
+.global > header {
+  flex: 0 1 1500px;
 }
 
 #entete {
@@ -164,4 +246,26 @@ body {
   z-index: -1;
   transform: skewY(-5deg);
   background-color: var(--couleur-arriere-galerie);
+}
+
+.entete__header {
+  background-image: url("images/github.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 400px;
+  text-align: center;
+}
+
+.entete__header__button {
+  text-align: center;
+}
+
+@media screen and (min-width: 900px) {
+  .entete__header {
+    background-position: 100% 50%;
+    text-align: left;
+  }
+  .entete__header__button {
+    text-align: left;
+  }
 }/*# sourceMappingURL=style.css.map */
