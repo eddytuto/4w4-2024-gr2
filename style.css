@@ -20,17 +20,10 @@ Ce thème a été développé dans le cadre du cours 4W4
 https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 */
 :root {
-  /*
-      --couleur-arriere-entete: #77c2e5;
-      --couleur-arriere-accueil: #c1d32d;
-      --couleur-arriere-evenement: #dd8211;
-      --couleur-arriere-galerie: #8cee99;
-      --couleur-arriere-footer: #1d3f9f;
-  */
-  --nb-element: 5;
+  --nb-element: 3;
   --increment-angle: calc(360 / var(--nb-element));
   /* 360/5 = 72) */
-  --angle-initial: 224;
+  --angle-initial: 227;
   /* couleur arrière plan */
   --s-couleur-arriere: 100%;
   --l-couleur-arriere: 50%;
@@ -40,44 +33,81 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
   --hu1: var(--angle-initial);
   --hu2: calc(var(--hu1) + var(--increment-angle));
   --hu3: calc(var(--hu2) + var(--increment-angle));
-  --hu4: calc(var(--hu3) + var(--increment-angle));
-  --hu5: calc(var(--hu4) + var(--increment-angle));
-  /*
-      --couleur-arriere-entete: hsl(var(--hu1), var(--s-couleur-arriere), var(--l-couleur-arriere));
-      --couleur-arriere-accueil: hsl(var(--hu2),var(--s-couleur-arriere),  var(--l-couleur-arriere));
-      --couleur-arriere-evenement: hsl(var(--hu3),var(--s-couleur-arriere), var(--l-couleur-arriere));
-      --couleur-arriere-galerie: hsl(var(--hu4),var(--s-couleur-arriere), var(--l-couleur-arriere));
-      --couleur-arriere-footer: hsl(var(--hu5),var(--s-couleur-arriere), var(--l-couleur-arriere));
-
-      --couleur-entete: hsl(var(--hu1), var(--s-couleur), var(--l-couleur));
-      --couleur-accueil: hsl(var(--hu2), var(--s-couleur), var(--l-couleur));
-      --couleur-evenement: hsl(var(--hu3), var(--s-couleur), var(--l-couleur));
-      --couleur-galerie: hsl(var(--hu4), var(--s-couleur), var(--l-couleur));
-      --couleur-footer: hsl(var(--hu5), var(--s-couleur), var(--l-couleur));
-  */
-  --hu2: calc(var(--hu1) + 180 );
-  --couleur-arriere-entete: hsl(var(--hu1), var(--s-couleur-arriere), 60%);
   --couleur-arriere-accueil: hsl(var(--hu1),var(--s-couleur-arriere), 65%);
-  --couleur-arriere-evenement: hsl(var(--hu1),var(--s-couleur-arriere), 70%);
   --couleur-arriere-galerie: hsl(var(--hu2),var(--s-couleur-arriere), 75%);
+  --couleur-arriere-evenement: hsl(var(--hu3),var(--s-couleur-arriere), 70%);
   --couleur-arriere-footer: hsl(var(--hu1),var(--s-couleur-arriere), 80%);
-  --couleur-entete: hsl(var(--hu1), var(--s-couleur-arriere), 20%);
-  --couleur-ombrage: hsl(var(--hu1), var(--s-couleur-arriere), 50%);
-  --couleur-accueil: hsl(var(--hu1),var(--s-couleur-arriere), 25%);
-  --couleur-evenement: hsl(var(--hu1),var(--s-couleur-arriere), 30%);
-  --couleur-galerie: hsl(var(--hu2),var(--s-couleur-arriere), 35%);
-  --couleur-footer: hsl(var(--hu1),var(--s-couleur-arriere), 45%);
-  --couleur-lien: hsl(var(--hu2),var(--s-couleur-arriere), 45%);
-  --couleur-lien-hover: hsl(var(--hu2),var(--s-couleur-arriere), 55%);
-  --couleur-lien-visited: hsl(var(--hu2),var(--s-couleur-arriere), 60%);
-  --couleur-bouton-1-active: hsl(var(--hu2),var(--s-couleur-arriere), 35%);
-  --couleur-bouton-2-active: hsl(var(--hu2),var(--s-couleur-arriere), 45%);
-  --couleur-bouton-1: hsl(var(--hu2),var(--s-couleur-arriere), 55%);
-  --couleur-bouton-2: hsl(var(--hu2),var(--s-couleur-arriere), 65%);
-  --couleur-bouton-hover-1: hsl(var(--hu2),var(--s-couleur-arriere), 75%);
-  --couleur-bouton-hover-2: hsl(var(--hu2),var(--s-couleur-arriere), 80%);
-  --couleur-bouton-text: hsl(var(--hu2),var(--s-couleur-arriere), 20%);
-  --couleur-bouton-2: hsl(var(--hu2),var(--s-couleur-arriere), 49%);
+}
+
+#entete {
+  --_couleur-arriere: hsl(var(--hu1), var(--s-couleur-arriere), 60%);
+  --_couleur: hsl(var(--hu1), var(--s-couleur-arriere), 20%);
+  --_couleur-ombrage: hsl(var(--hu1), var(--s-couleur-arriere), 50%);
+  /* Couleur du bouton */
+  --_couleur-bouton-1-active: hsl(var(--hu2),var(--s-couleur-arriere), 35%);
+  --_couleur-bouton-2-active: hsl(var(--hu2),var(--s-couleur-arriere), 45%);
+  --_couleur-bouton-1: hsl(var(--hu2),var(--s-couleur-arriere), 55%);
+  --_couleur-bouton-2: hsl(var(--hu2),var(--s-couleur-arriere), 65%);
+  --_couleur-bouton-hover-1: hsl(var(--hu2),var(--s-couleur-arriere), 75%);
+  --_couleur-bouton-hover-2: hsl(var(--hu2),var(--s-couleur-arriere), 80%);
+  --_couleur-bouton-text: hsl(var(--hu2),var(--s-couleur-arriere), 20%);
+  --_couleur-bouton-2: hsl(var(--hu2),var(--s-couleur-arriere), 49%);
+}
+
+#accueil {
+  --_couleur-arriere: hsl(var(--hu1),var(--s-couleur-arriere), 65%);
+  --_couleur: hsl(var(--hu1),var(--s-couleur-arriere), 25%);
+  /* Couleur des liens */
+  --_couleur-lien: hsl(var(--hu2),var(--s-couleur-arriere), 40%);
+  --_couleur-lien-hover: hsl(var(--hu1),var(--s-couleur-arriere), 45%);
+  --_couleur-lien-visited: hsl(var(--hu3),var(--s-couleur-arriere), 50%);
+  /* Couleurs blockquote */
+  --_couleur-arriere-blockquote: hsl(var(--hu1),var(--s-couleur-arriere), 80%);
+  --_couleur-blockquote: hsl(var(--hu1),var(--s-couleur-arriere), 20%);
+  --_couleur-bordure: hsl(var(--hu1), var(--s-couleur-arriere), 70%);
+  --_couleur-blockquote-first-letter: hsl(var(--hu1),var(--s-couleur-arriere), 60%);
+}
+
+#galerie {
+  --_couleur-arriere: hsl(var(--hu2),var(--s-couleur-arriere), 75%);
+  --_couleur: hsl(var(--hu2),var(--s-couleur-arriere), 35%);
+  /* Couleur des liens */
+  --_couleur-lien: hsl(var(--hu2),var(--s-couleur-arriere), 40%);
+  --_couleur-lien-hover: hsl(var(--hu1),var(--s-couleur-arriere), 45%);
+  --_couleur-lien-visited: hsl(var(--hu3),var(--s-couleur-arriere), 50%);
+  /* Couleurs blockquote */
+  --_couleur-arriere-blockquote: hsl(var(--hu1),var(--s-couleur-arriere), 80%);
+  --_couleur-blockquote: hsl(var(--hu1),var(--s-couleur-arriere), 20%);
+  --_couleur-bordure: hsl(var(--hu1), var(--s-couleur-arriere), 70%);
+  --_couleur-blockquote-first-letter: hsl(var(--hu1),var(--s-couleur-arriere), 60%);
+}
+
+#evenement {
+  --_couleur-arriere: hsl(var(--hu3),var(--s-couleur-arriere), 70%);
+  --_couleur: hsl(var(--hu1),var(--s-couleur-arriere), 30%);
+  /* Couleur des liens */
+  --_couleur-lien: hsl(var(--hu2),var(--s-couleur-arriere), 40%);
+  --_couleur-lien-hover: hsl(var(--hu1),var(--s-couleur-arriere), 45%);
+  --_couleur-lien-visited: hsl(var(--hu3),var(--s-couleur-arriere), 50%);
+  /* Couleurs blockquote */
+  --_couleur-arriere-blockquote: hsl(var(--hu1),var(--s-couleur-arriere), 80%);
+  --_couleur-blockquote: hsl(var(--hu1),var(--s-couleur-arriere), 20%);
+  --_couleur-bordure: hsl(var(--hu1), var(--s-couleur-arriere), 70%);
+  --_couleur-blockquote-first-letter: hsl(var(--hu1),var(--s-couleur-arriere), 60%);
+}
+
+#footer {
+  --_couleur-arriere: hsl(var(--hu1),var(--s-couleur-arriere), 80%);
+  --_couleur: hsl(var(--hu1),var(--s-couleur-arriere), 45%);
+  /* Couleur des liens */
+  --_couleur-lien: hsl(var(--hu2),var(--s-couleur-arriere), 40%);
+  --_couleur-lien-hover: hsl(var(--hu1),var(--s-couleur-arriere), 45%);
+  --_couleur-lien-visited: hsl(var(--hu3),var(--s-couleur-arriere), 50%);
+  /* Couleurs blockquote */
+  --_couleur-arriere-blockquote: hsl(var(--hu1),var(--s-couleur-arriere), 80%);
+  --_couleur-blockquote: hsl(var(--hu1),var(--s-couleur-arriere), 20%);
+  --_couleur-bordure: hsl(var(--hu1), var(--s-couleur-arriere), 70%);
+  --_couleur-blockquote-first-letter: hsl(var(--hu1),var(--s-couleur-arriere), 60%);
 }
 
 /* ////////////////////////////////////////// */
@@ -92,7 +122,7 @@ https://clamp.font-size.app/?config=eyJyb290IjoiMTYiLCJtaW5XaWR0aCI6IjUwMHB4Iiwi
 */
 h1 {
   font-size: clamp(1.875rem, -1.25rem + 10vw, 5.625rem);
-  text-shadow: 3px 5px 6px var(--couleur-ombrage);
+  text-shadow: 3px 5px 6px var(--_couleur-ombrage);
   font-weight: bold;
   letter-spacing: -3px;
 }
@@ -109,10 +139,28 @@ h3 {
 
 p {
   font-size: clamp(1rem, 0.4792rem + 1.6667vw, 1.625rem);
+  line-height: 1.8rem;
+  padding: 2rem 0;
+}
+
+blockquote {
+  background-color: var(--_couleur-arriere-blockquote);
+  color: var(--_couleur-blockquote);
+  padding: 2rem;
+  width: 95%;
+  font-size: clamp(1.25rem, 0.7292rem + 1.6667vw, 1.875rem);
+  font-style: italic;
+  border-left: 10px solid var(--_couleur-bordure);
+}
+
+blockquote::first-letter {
+  font-size: clamp(1.5625rem, -0.2604rem + 5.8333vw, 3.75rem);
+  font-weight: bold;
+  color: var(--_couleur-blockquote-first-letter);
 }
 
 button {
-  background-image: linear-gradient(163deg, var(--couleur-bouton-1), var(--couleur-bouton-2));
+  background-image: linear-gradient(163deg, var(--_couleur-bouton-1), var(--_couleur-bouton-2));
   font-size: clamp(1.5rem, 0.1458rem + 4.3333vw, 3.125rem);
   border-radius: 10px;
   border: 2ps solid #555;
@@ -125,13 +173,13 @@ button {
   cursor: pointer;
 }
 button:hover {
-  background-image: linear-gradient(163deg, var(--couleur-bouton-hover-1), var(--couleur-bouton-hover-2));
+  background-image: linear-gradient(163deg, var(--_couleur-bouton-hover-1), var(--_couleur-bouton-hover-2));
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-  transform: translateY(-2px);
+  transform: translateY(-6px);
 }
 button:active {
   transform: translateY(0);
-  background-image: linear-gradient(163deg, var(--couleur-bouton-active-1), var(--couleur-bouton-active-2));
+  background-image: linear-gradient(163deg, var(--_couleur-bouton-active-1), var(--_couleur-bouton-active-2));
 }
 
 /*
@@ -188,37 +236,39 @@ body {
 
 .global > header {
   flex: 0 1 1500px;
-  padding: 0;
+  padding: 3rem 0 0 0;
   min-height: 50vh;
-}
-
-#entete {
-  background-color: var(--couleur-arriere-entete);
-  color: var(--couleur-entete);
   position: relative;
 }
 
+#entete {
+  background-color: var(--_couleur-arriere);
+  color: var(--_couleur);
+  position: relative;
+  min-height: 100vh;
+}
+
 #accueil {
-  background-color: var(--couleur-arriere-accueil);
-  color: var(--couleur-accueil);
+  background-color: var(--_couleur-arriere);
+  color: var(--_couleur);
 }
 
 #galerie {
-  background-color: var(--couleur-arriere-galerie);
-  color: var(--couleur-galerie);
+  background-color: var(--couleur-arriere-accueil);
+  color: var(--_couleur);
   z-index: 1;
   background: linear-gradient(180deg, var(--couleur-arriere-accueil) 50%, var(--couleur-arriere-evenement) 50%);
 }
 
 #evenement {
-  background-color: var(--couleur-arriere-evenement);
-  color: var(--couleur-evenement);
+  background-color: var(--_couleur-arriere);
+  color: var(--_couleur);
   position: relative;
 }
 
 #footer {
-  background-color: var(--couleur-arriere-footer);
-  color: var(--couleur-footer);
+  background-color: var(--_couleur-arriere);
+  color: var(--_couleur);
 }
 
 .vague {
@@ -255,34 +305,50 @@ body {
   background-color: var(--couleur-arriere-galerie);
 }
 
+.entete__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 3rem;
+  gap: 3rem;
+}
+
 .entete__header__texte {
-  /*
-      display : flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-  */
-  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   width: 100%;
-  height: 50%;
   background-image: url("images/wordpress-theme.png");
   background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: 400px;
+  background-position: 50% 90%;
+  background-size: content;
   text-align: center;
+  gap: 2rem;
 }
 
 .entete__header__button {
   text-align: center;
   padding-bottom: 10rem;
+  width: 100%;
 }
 
 @media screen and (min-width: 1100px) {
   .entete__header__texte {
-    background-position: 100% 50%;
-    text-align: left;
+    background-position: 100% 90%;
+    align-items: flex-start;
   }
   .entete__header__button {
     text-align: left;
   }
+}
+/* ////////////////////////////////////////// */
+/* composants                             */
+/* ////////////////////////////////////////// */
+.sociaux {
+  display: flex;
+  justify-content: flex-end;
+  order: 0;
+  gap: 1rem;
 }/*# sourceMappingURL=style.css.map */

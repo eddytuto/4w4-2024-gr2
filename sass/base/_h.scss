@@ -7,16 +7,15 @@ https://clamp.font-size.app/?config=eyJyb290IjoiMTYiLCJtaW5XaWR0aCI6IjUwMHB4Iiwi
 */
 
 h1 {
-font-size: clamp(1.875rem, -1.25rem + 10vw, 5.625rem);
-text-shadow: 3px 5px 6px var(--couleur-ombrage);
+    font-size: clamp(1.875rem, -1.25rem + 10vw, 5.625rem);
+    text-shadow: 3px 5px 6px var(--_couleur-ombrage);
     font-weight: bold;
     letter-spacing: -3px;
 }
 
 
 h2 { 
-font-size: clamp(1.5625rem, -0.2604rem + 5.8333vw, 3.75rem);
-
+    font-size: clamp(1.5625rem, -0.2604rem + 5.8333vw, 3.75rem);
     font-weight: bold;
 }
 
@@ -34,7 +33,25 @@ h6 {}
 
 p {
     font-size: clamp(1rem, 0.4792rem + 1.6667vw, 1.625rem);
+    line-height: 1.8rem;
+    padding : 2rem 0;
 }
 
 hr {}
 
+blockquote {
+    background-color: var(--_couleur-arriere-blockquote);
+    color : var(--_couleur-blockquote);
+    padding : 2rem;
+    width : 95%;
+    font-size: clamp(1.25rem, 0.7292rem + 1.6667vw, 1.875rem);
+    font-style: italic;
+    border-left: 10px solid var(--_couleur-bordure);
+
+}
+
+blockquote::first-letter{
+   font-size: clamp(1.5625rem, -0.2604rem + 5.8333vw, 3.75rem);
+    font-weight: bold;
+    color : var(--_couleur-blockquote-first-letter);
+}
