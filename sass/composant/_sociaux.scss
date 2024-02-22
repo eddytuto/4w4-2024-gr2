@@ -1,7 +1,10 @@
-.sociaux{
-    display:flex;
-    justify-content: flex-end;
-    order :0;
-    gap: 1rem;
 
+.sociaux{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.sociaux  svg {
+    fill : red;
 }

@@ -348,7 +348,10 @@ body {
 /* ////////////////////////////////////////// */
 .sociaux {
   display: flex;
-  justify-content: flex-end;
-  order: 0;
-  gap: 1rem;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.sociaux svg {
+  fill: red;
 }/*# sourceMappingURL=style.css.map */
