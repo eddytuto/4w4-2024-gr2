@@ -1,5 +1,5 @@
-button {
-    background-image: linear-gradient(163deg, var(--_couleur-bouton-1), var(--_couleur-bouton-2));
+button.entete__button {
+   background-image: linear-gradient(163deg, var(--_couleur-bouton-1), var(--_couleur-bouton-2));
    font-size: clamp(1.5rem, 0.1458rem + 4.3333vw, 3.125rem);
    border-radius: 10px;
    border : 2ps solid   #555;
@@ -7,8 +7,8 @@ button {
    margin: 20px;
    transition : transform .1s;
    transform: translateY(0);
-    font-weight: 600;
-    text-align : center;
+   font-weight: 600;
+   text-align : center;
    cursor: pointer;
    &:hover{
      background-image: linear-gradient(163deg, var(--_couleur-bouton-hover-1), var(--_couleur-bouton-hover-2));
@@ -20,9 +20,6 @@ button {
     background-image: linear-gradient(163deg, var(--_couleur-bouton-active-1), var(--_couleur-bouton-active-2));
    }
 }
-
-
-
 
 /*
 https://getcssscan.com/css-buttons-examples
