@@ -320,7 +320,7 @@ body {
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  background-image: url("images/wordpress-theme.png");
+  background-image: url("images/ocean.jpg");
   background-repeat: no-repeat;
   background-position: 50% 90%;
   background-size: content;
@@ -343,6 +343,14 @@ body {
     text-align: left;
   }
 }
+.footer__section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+}
+
 /* ////////////////////////////////////////// */
 /* composants                             */
 /* ////////////////////////////////////////// */
@@ -354,4 +362,14 @@ body {
 
 .sociaux svg {
   fill: red;
+}
+
+.recherche {
+  display: flex;
+  border: 1px solid #aaa;
+  justify-content: center;
+}
+
+.recherche__input {
+  display: block;
 }/*# sourceMappingURL=style.css.map */
