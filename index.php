@@ -1,15 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thème gr2</title>
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/normalize.css';?>" >
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/style.css';?>" >
 
-    <!-- link rel="stylesheet" href="http://localhost:81/4w4-2024-gr2/wp-content/themes/theme-gr2/normalize.css" >
-    <link rel="stylesheet" href="http://localhost:81/4w4-2024-gr2/wp-content/themes/theme-gr2/style.css" -->
-<link rel="stylesheet" href="normalize.css">
-<link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -38,96 +35,28 @@
         <section class="accueil__section">
             <h2>Accueil (h2)</h2>
         <div class="section__cours">  
-       
-          <div class="carte">
-            <h4>582-1M1 Création vidéo (75h)</h4>
-            <p>3-2-3 2,67 unités Aucun préalable. Ce cours initie l’étudiant au…</p>
+ <?php
+  /*
+        if (have_posts()){
+            while(have_posts()){
+                the_post();
+                the_title('<p>','</p>');
+                $contenu = get_the_content();
+                $contenu = wp_trim_words($contenu, 10);
+                echo $contenu;
+            }
+        }
+  */
+  ?>      
+  <?php if (have_posts()):
+        while(have_posts()): the_post(); ?>
+        <div class="carte">
+            <h4><?php the_title(); ?></h4>
+            <p><?php echo wp_trim_words(get_the_content(),10); ?></p>
         </div>
-               <div class="carte">
-            <h4>582-4C2 Gestion de projets multimédias (45h)</h4>
-            <p>Ce cours initie l'étudiant aux rudiments de la gestion d’un…</p>
-        </div>
-               <div class="carte">
-            <h4>582-4W4 Conception d’interfaces et développement Web (90h)</h4>
-            <p>Dans ce cours, l’étudiant poursuit son apprentissage de l’intégration de…</p>
-        </div>
-               <div class="carte">
-            <h4>582-4J4 Création de jeu en équipe (105h)</h4>
-            <p>Dans ce cours qui s'appuie sur une pédagogie par projets,…</p>
-        </div>
-               <div class="carte">
-            <h4>582-4PA Interfaces Web réactives et animées &#8211; Cours au choix (75h)</h4>
-            <p>En session 4, l'étudiant doit choisir entre ce cours et…</p>
-        </div>
-               <div class="carte">
-            <h4>582-4MB Animation 3D (75h)</h4>
-            <p>En session 4, l'étudiant doit choisir entre ce cours et…</p>
-        </div>
-               <div class="carte">
-            <h4>393-5E1 Méthodes de recherche et préparation au marché du travail (45h)</h4>
-            <p>Ce cours permet à l’étudiant d'acquérir des habiletés en recherche,…</p>
-        </div>
-               <div class="carte">
-            <h4>350-5N1 Communication et dynamique d’une équipe de travail (45h)</h4>
-            <p>Ce cours permet à l’étudiant de développer ses habiletés en…</p>
-        </div>
-               <div class="carte">
-            <h4>582-5W5	Projet Web en équipe (105h)</h4>
-            <p>Préalable relatif : Conception d’interfaces et développement Web Dans ce…</p>
-        </div>
-               <div class="carte">
-            <h4>582-5MB	Technologies émergentes et avancées – volet Création (60h)</h4>
-            <p>En session 5, l'étudiant doit choisir entre ce cours et…</p>
-        </div>
-               <div class="carte">
-            <h4>582-3J3 Création de jeu 3D (75h)</h4>
-            <p>Ce cours permet à l'étudiant d'intégrer différents types de médias…</p>
-        </div>
-               <div class="carte">
-            <h4>582-3W3 Création de sites Web dynamiques (90h)</h4>
-            <p>Dans ce cours, les notions acquises dans les cours «…</p>
-        </div>
-               <div class="carte">
-            <h4>582-1M2 Conception graphique et imagerie matricielle (90h)</h4>
-            <p>Ce cours initie l'étudiant aux rudiments de la conception et…</p>
-        </div>
-               <div class="carte">
-            <h4>582-1W1 Mise en page Web (75h)</h4>
-            <p>Dans ce cours, l'étudiant apprend les techniques de mise en…</p>
-        </div>
-               <div class="carte">
-            <h4>582-1J1 Animation et interactivité en jeu (75h)</h4>
-            <p>Ce cours est consacré aux concepts de base nécessaires à…</p>
-        </div>
-               <div class="carte">
-            <h4>582-2M3 Effets spéciaux et animation (60h)</h4>
-            <p>Ce cours permet d'approfondir la formation de l’étudiant en matière…</p>
-        </div>
-               <div class="carte">
-            <h4>582-2M4 Conception graphique et imagerie vectorielle (90h)</h4>
-            <p>Dans ce cours, l’étudiant poursuit l’apprentissage des notions liées à…</p>
-        </div>
-               <div class="carte">
-            <h4>582-2W2	Animation et interactivité Web (75h)</h4>
-            <p>Ce cours permet à l'étudiant d'acquérir les compétences de base…</p>
-        </div>
-               <div class="carte">
-            <h4>582-2J2	Création de jeu 2D (60h)</h4>
-            <p>Dans ce cours, l’étudiant approfondit la programmation graphique et s’initie…</p>
-        </div>
-               <div class="carte">
-            <h4>582-3M5	Imagerie 3D (75h)</h4>
-            <p>Dans ce cours, l’étudiant est initié au monde de l’imagerie…</p>
-        </div>
-               <div class="carte">
-            <h4>582-3C1 Design d’interactivité (75h)</h4>
-            <p>L’étudiant apprend à concevoir des expériences interactives en plaçant les…</p>
-        </div>
-               <div class="carte">
-            <h4>582-6N3 Stage (285h)</h4>
-            <p>Le stage en entreprise complète la formation de l’étudiant en…</p>
-        </div>
-             </div>
+       <?php endwhile; ?>
+    <?php endif; ?>
+  </div>
 
 
 
