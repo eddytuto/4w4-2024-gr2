@@ -24,7 +24,9 @@ body {
 
 .global > section,
 .global > header,
-.global > footer{
+.global > footer,
+.global > .entete__menu
+{
     // flex : grow shrink basis
     flex : 0 1 1100px;
     // border : 1px solid #aaa;

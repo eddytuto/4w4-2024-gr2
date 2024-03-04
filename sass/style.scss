@@ -21,6 +21,11 @@ Ce thème a été développé dans le cadre du cours 4W4
 @import "variables";
 
 /* ////////////////////////////////////////// */
+/* Class utile                            */
+/* ////////////////////////////////////////// */
+@import "utile/local";
+
+/* ////////////////////////////////////////// */
 /* règles de base                             */
 /* ////////////////////////////////////////// */
 @import "base/h";
@@ -44,4 +49,6 @@ Ce thème a été développé dans le cadre du cours 4W4
 @import "composant/sociaux";
 @import "composant/recherche";
 @import "composant/carte";
+@import "composant/menu";
+
 

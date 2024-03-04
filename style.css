@@ -111,6 +111,19 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 }
 
 /* ////////////////////////////////////////// */
+/* Class utile                            */
+/* ////////////////////////////////////////// */
+.bgc-text {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 15px 20px;
+}
+@media screen and (min-width: 1100px) {
+  .bgc-text {
+    background-color: transparent;
+  }
+}
+
+/* ////////////////////////////////////////// */
 /* règles de base                             */
 /* ////////////////////////////////////////// */
 /*
@@ -229,7 +242,8 @@ body {
 
 .global > section,
 .global > header,
-.global > footer {
+.global > footer,
+.global > .entete__menu {
   flex: 0 1 1100px;
   padding: 10rem 1rem;
 }
@@ -320,7 +334,7 @@ body {
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  background-image: url("images/ocean.jpg");
+  background-image: url("images/wordpress-theme.png");
   background-repeat: no-repeat;
   background-position: 50% 90%;
   background-size: content;
@@ -384,7 +398,43 @@ body {
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  flex: 0 1 23%;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 252.5px;
   background-color: hsl(var(--hu1), var(--s-couleur-arriere), 75%);
+}
+
+.carte * {
+  text-align: center;
+}
+
+/*
+<div id="menu" class="global">
+ <div class="entete__menu">
+ // générer par wp_nav_menu()
+  <div class="menu-entete-container">
+    <ul id="menu-entete" class="menu">
+     <li id="menu-item-36" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-36"><a href="http://localhost:81/4w4-2024-gr2/2020/10/07/350-5n1-communication-et-dynamique-dune-equipe-de-travail-45h/">Communication</a></li>
+     <li id="menu-item-37" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-37"><a href="http://localhost:81/4w4-2024-gr2/2020/10/07/393-5e1-methodes-de-recherche-et-preparation-au-marche-du-travail-45h/">Méthodes de recherche</a></li>
+     <li id="menu-item-38" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-38"><a href="http://localhost:81/4w4-2024-gr2/2020/10/07/582-1j1-animation-et-interactivite-en-jeu-75h/">Animation en jeu</a></li>
+     <li id="menu-item-39" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-39"><a href="http://localhost:81/4w4-2024-gr2/2020/10/07/description-du-cours-582-1m1-creation-video/">Création vidéo</a></li>
+     <li id="menu-item-40" class="menu-item menu-item-type-post_type menu-item-object-post current-menu-item menu-item-40"><a href="http://localhost:81/4w4-2024-gr2/2020/10/07/description-du-cours-582-1m2-conception-graphique-et-imagerie-matricielle/" aria-current="page">Conception graphique</a></li>
+    </ul>
+   </div>        
+   </div>
+</div>
+*/
+.entete__menu {
+  border: 1px solid #aaa;
+}
+
+.menu-entete-container {
+  border: 1px solid #aaa;
+  width: 100%;
+}
+
+.menu {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
 }/*# sourceMappingURL=style.css.map */

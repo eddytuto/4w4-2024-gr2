@@ -13,14 +13,19 @@
 
 </head>
 <body>
+    <div id="menu" class="global">
+        <div class="entete__menu">
+            <?php wp_nav_menu(); ?>
+        </div>
+    </div>
     <div id="entete" class="global">
         <header class="entete__header">  
                         <!-- facebook -->
 
             <div class="entete__header__texte">    
-                <h1>Thème du groupe #2</h1>
-                <h2>4W4 - Conception d'interface <br> et développement Web</h2>
-                <h3>TIM - Collège de Maisonneuve</h3>
+                <h1 class="bgc-text">Thème du groupe #2</h1>
+                <h2 class="bgc-text">4W4 - Conception d'interface <br> et développement Web</h2>
+                <h3 class="bgc-text">TIM - Collège de Maisonneuve</h3>
             </div>   
             <div class="entete__header__button"><button class="entete__button">Événements</button></div>
 
@@ -49,10 +54,18 @@
   */
   ?>      
   <?php if (have_posts()):
-        while(have_posts()): the_post(); ?>
+        while(have_posts()): the_post(); 
+        $titre = get_the_title();
+        $sigle = substr($titre, 0, 7);
+        $pos_parenthese = strpos($titre, '(');
+        $duree = substr($titre,$pos_parenthese+1, -1);
+        $titre = substr($titre, 7, $pos_parenthese-7);
+        ?>
         <div class="carte">
-            <h4><?php the_title(); ?></h4>
+            <h5><?php echo $sigle; ?></h5> 
+            <h4><?php echo $titre; ?></h4>
             <p><?php echo wp_trim_words(get_the_content(),10); ?></p>
+            <h5>Durée: <?php echo $duree; ?></h5>
         </div>
        <?php endwhile; ?>
     <?php endif; ?>

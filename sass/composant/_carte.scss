@@ -11,7 +11,12 @@
     padding : 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    flex : 0 1 23%;
+    justify-content: center;
+    align-items: center;
+    flex : 1 0 calc(1010px/4);
     background-color: hsl(var(--hu1),var(--s-couleur-arriere),  75%);
+}
+
+.carte *{
+    text-align: center;
 }
