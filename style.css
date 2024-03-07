@@ -52,6 +52,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
   --_couleur-bouton-hover-2: hsl(var(--hu2),var(--s-couleur-arriere), 80%);
   --_couleur-bouton-text: hsl(var(--hu2),var(--s-couleur-arriere), 20%);
   --_couleur-bouton-2: hsl(var(--hu2),var(--s-couleur-arriere), 49%);
+  --_couleur-arriere-vague: hsl(var(--hu1),var(--s-couleur-arriere), 65%);
 }
 
 #accueil {
@@ -94,6 +95,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
   --_couleur-blockquote: hsl(var(--hu1),var(--s-couleur-arriere), 20%);
   --_couleur-bordure: hsl(var(--hu1), var(--s-couleur-arriere), 70%);
   --_couleur-blockquote-first-letter: hsl(var(--hu1),var(--s-couleur-arriere), 60%);
+  --_couleur-arriere-vague: hsl(var(--hu1),var(--s-couleur-arriere), 80%);
 }
 
 #footer {
@@ -237,21 +239,17 @@ body {
 .global {
   display: flex;
   justify-content: center;
-  min-height: 30vh;
 }
 
 .global > section,
-.global > header,
-.global > footer,
-.global > .entete__menu {
+.global > footer {
   flex: 0 1 1100px;
   padding: 10rem 1rem;
 }
 
-.global > header {
+.entete__menu, .entete__header {
   flex: 0 1 1500px;
   padding: 3rem 0 0 0;
-  min-height: 50vh;
   position: relative;
 }
 
@@ -259,7 +257,6 @@ body {
   background-color: var(--_couleur-arriere);
   color: var(--_couleur);
   position: relative;
-  min-height: 100vh;
 }
 
 #accueil {
@@ -300,6 +297,10 @@ body {
   width: calc(100% + 1.3px);
   height: 64px;
   transform: rotateY(180deg);
+}
+
+.remplissage {
+  fill: var(--_couleur-arriere-vague);
 }
 
 .diagonal {
@@ -409,32 +410,63 @@ body {
 }
 
 /*
-<div id="menu" class="global">
- <div class="entete__menu">
- // générer par wp_nav_menu()
-  <div class="menu-entete-container">
-    <ul id="menu-entete" class="menu">
-     <li id="menu-item-36" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-36"><a href="http://localhost:81/4w4-2024-gr2/2020/10/07/350-5n1-communication-et-dynamique-dune-equipe-de-travail-45h/">Communication</a></li>
-     <li id="menu-item-37" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-37"><a href="http://localhost:81/4w4-2024-gr2/2020/10/07/393-5e1-methodes-de-recherche-et-preparation-au-marche-du-travail-45h/">Méthodes de recherche</a></li>
-     <li id="menu-item-38" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-38"><a href="http://localhost:81/4w4-2024-gr2/2020/10/07/582-1j1-animation-et-interactivite-en-jeu-75h/">Animation en jeu</a></li>
-     <li id="menu-item-39" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-39"><a href="http://localhost:81/4w4-2024-gr2/2020/10/07/description-du-cours-582-1m1-creation-video/">Création vidéo</a></li>
-     <li id="menu-item-40" class="menu-item menu-item-type-post_type menu-item-object-post current-menu-item menu-item-40"><a href="http://localhost:81/4w4-2024-gr2/2020/10/07/description-du-cours-582-1m2-conception-graphique-et-imagerie-matricielle/" aria-current="page">Conception graphique</a></li>
-    </ul>
-   </div>        
-   </div>
-</div>
+<nav class="menu-principal-container">
+  <ul id="menu-principal" class="menu"><li id="menu-item-36" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-36"><a href="http://localhost:81/4w4-2024-gr2/2020/10/07/350-5n1-communication-et-dynamique-dune-equipe-de-travail-45h/">Communication</a></li>
+  <li id="menu-item-37" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-37"><a href="http://localhost:81/4w4-2024-gr2/2020/10/07/393-5e1-methodes-de-recherche-et-preparation-au-marche-du-travail-45h/">Méthodes de recherche</a></li>
+  <li id="menu-item-38" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-38"><a href="http://localhost:81/4w4-2024-gr2/2020/10/07/582-1j1-animation-et-interactivite-en-jeu-75h/">Animation en jeu</a></li>
+  <li id="menu-item-39" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-39"><a href="http://localhost:81/4w4-2024-gr2/2020/10/07/description-du-cours-582-1m1-creation-video/">Création vidéo</a></li>
+  <li id="menu-item-42" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-42"><a href="#accueil">Accueil</a></li>
+  <li id="menu-item-43" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43"><a href="#galerie">Galerie</a></li>
+  <li id="menu-item-44" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-44"><a href="#evenement">Événement</a></li>
+</ul>
+</nav>
 */
-.entete__menu {
+.menu-principal-container {
   border: 1px solid #aaa;
+  position: absolute;
+  top: 0;
+  left: 50px;
+  z-index: 2;
+  transform: translateX(-200%);
+}
+@media screen and (min-width: 700px) {
+  .menu-principal-container {
+    position: static;
+    transform: translateX(0);
+  }
 }
 
-.menu-entete-container {
-  border: 1px solid #aaa;
-  width: 100%;
-}
-
-.menu {
+#menu-principal {
   display: flex;
+  flex-direction: column;
   list-style-type: none;
-  justify-content: space-around;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+@media screen and (min-width: 700px) {
+  #menu-principal {
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
+
+#chk_burger {
+  display: none;
+}
+
+#burger {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@media screen and (min-width: 700px) {
+  #burger {
+    display: none;
+  }
+}
+
+#chk_burger:checked ~ .menu-principal-container {
+  transform: translateX(0);
 }/*# sourceMappingURL=style.css.map */

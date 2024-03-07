@@ -42,6 +42,8 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 --_couleur-bouton-text : hsl(var(--hu2),var(--s-couleur-arriere), 20%);
 --_couleur-bouton-2 : hsl(var(--hu2),var(--s-couleur-arriere), 49%);
 
+--_couleur-arriere-vague : hsl(var(--hu1),var(--s-couleur-arriere),  65%);
+
 }
 
 
@@ -94,6 +96,8 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 --_couleur-blockquote :  hsl(var(--hu1),var(--s-couleur-arriere), 20%);
 --_couleur-bordure :  hsl(var(--hu1), var(--s-couleur-arriere), 70%);
 --_couleur-blockquote-first-letter :  hsl(var(--hu1),var(--s-couleur-arriere), 60%);
+
+--_couleur-arriere-vague : hsl(var(--hu1),var(--s-couleur-arriere), 80%);
 }
 
 

@@ -1,14 +1,13 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thème gr2</title>
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="style.css">
-    <!-- link rel="stylesheet" href="http://localhost:81/4w4-2024-gr2/wp-content/themes/theme-gr2/normalize.css" >
-    <link rel="stylesheet" href="http://localhost:81/4w4-2024-gr2/wp-content/themes/theme-gr2/style.css" -->
+    <link rel="stylesheet" href="normalize.css" >
+    <link rel="stylesheet" href="style.css" >
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,16 +16,22 @@
 </head>
 <body>
     <div id="menu" class="global">
-        <div class="entete__menu">
-            <div class="menu-entete-container"><ul id="menu-entete" class="menu"><li id="menu-item-36" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-36"><a href="http://localhost:81/4w4-2024-gr2/2020/10/07/350-5n1-communication-et-dynamique-dune-equipe-de-travail-45h/">Communication</a></li>
+        <header class="entete__menu">
+            <label id="burger" for="chk_burger">
+                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" color="#000"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path></svg>
+            </label>
+            <input id="chk_burger" type="checkbox">
+            <nav class="menu-principal-container"><ul id="menu-principal" class="menu"><li id="menu-item-36" class="menu-item menu-item-type-post_type menu-item-object-post current-menu-item menu-item-36"><a href="http://localhost:81/4w4-2024-gr2/2020/10/07/350-5n1-communication-et-dynamique-dune-equipe-de-travail-45h/" aria-current="page">Communication</a></li>
 <li id="menu-item-37" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-37"><a href="http://localhost:81/4w4-2024-gr2/2020/10/07/393-5e1-methodes-de-recherche-et-preparation-au-marche-du-travail-45h/">Méthodes de recherche</a></li>
 <li id="menu-item-38" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-38"><a href="http://localhost:81/4w4-2024-gr2/2020/10/07/582-1j1-animation-et-interactivite-en-jeu-75h/">Animation en jeu</a></li>
 <li id="menu-item-39" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-39"><a href="http://localhost:81/4w4-2024-gr2/2020/10/07/description-du-cours-582-1m1-creation-video/">Création vidéo</a></li>
-<li id="menu-item-40" class="menu-item menu-item-type-post_type menu-item-object-post current-menu-item menu-item-40"><a href="http://localhost:81/4w4-2024-gr2/2020/10/07/description-du-cours-582-1m2-conception-graphique-et-imagerie-matricielle/" aria-current="page">Conception graphique</a></li>
-</ul></div>        </div>
+<li id="menu-item-42" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-42"><a href="#accueil">Accueil</a></li>
+<li id="menu-item-43" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43"><a href="#galerie">Galerie</a></li>
+<li id="menu-item-44" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-44"><a href="#evenement">Événement</a></li>
+</ul></nav>        </header>
     </div>
-    <div id="entete" class="global">
-        <header class="entete__header">  
+<div id="entete" class="global">
+        <section class="entete__header">  
                         <!-- facebook -->
 
             <div class="entete__header__texte">    
@@ -35,24 +40,22 @@
                 <h3 class="bgc-text">TIM - Collège de Maisonneuve</h3>
             </div>   
             <div class="entete__header__button"><button class="entete__button">Événements</button></div>
-
-        </header>
-        <div class="vague">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" style="fill:var(--couleur-arriere-accueil)"></path>
-            </svg>
-        </div>
-    </div>
+        </section>
+<div class="vague">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path class="remplissage" d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"></path>
+    </svg>
+</div>    </div>
     <div id="accueil" class="global">
         <section class="accueil__section">
             <h2>Accueil (h2)</h2>
         <div class="section__cours">  
        
           <div class="carte">
-            <h5>582-1M2</h5> 
-            <h4> Conception graphique et imagerie matricielle </h4>
-            <p>Ce cours initie l'étudiant aux rudiments de la conception et…</p>
-            <h5>Durée: 90h</h5>
+            <h5>350-5N1</h5> 
+            <h4> Communication et dynamique d’une équipe de travail </h4>
+            <p>Ce cours permet à l’étudiant de développer ses habiletés en…</p>
+            <h5>Durée: 45h</h5>
         </div>
              </div>
 
@@ -73,11 +76,10 @@
              <blockquote>Événement ipsum, dolor sit amet consectetur adipisicing elit. Accusantium a, repellat alias qui ut in ratione optio quia quae minus repudiandae ducimus aliquid aperiam unde atque tempore non. Non, magnam.</blockquote>
         </section>
         <div class="vague">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" style="fill:var(--couleur-arriere-footer)"></path>
-            </svg>
-        </div>
-    </div>
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path class="remplissage" d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"></path>
+    </svg>
+</div>    </div>
     <div id="footer" class="global">
         <footer class="footer__section">
             <form class="recherche" action="">

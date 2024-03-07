@@ -19,13 +19,11 @@ body {
 .global {
     display:flex;
     justify-content: center;
-    min-height: 30vh;
+   // min-height: 30vh;
 }
 
 .global > section,
-.global > header,
-.global > footer,
-.global > .entete__menu
+.global > footer
 {
     // flex : grow shrink basis
     flex : 0 1 1100px;
@@ -34,10 +32,10 @@ body {
     padding : 10rem 1rem;
 }
 
-.global > header {
+.entete__menu, .entete__header {
   flex : 0 1 1500px;
   padding: 3rem 0 0 0 ;
-   min-height: 50vh;
+   // min-height: 50vh;
    position : relative;
 
 }
@@ -51,7 +49,7 @@ body {
      //  background-repeat: no-repeat;
     color : var(--_couleur);
     position : relative;
-    min-height: 100vh;
+    // min-height: 100vh;
 
 }
 #accueil {
