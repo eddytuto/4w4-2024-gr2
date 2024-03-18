@@ -24,24 +24,20 @@
             <h2>Accueil (h2)</h2>
         <div class="section__cours">  
  <?php
-  /*
-        if (have_posts()){
-            while(have_posts()){
-                the_post();
-                the_title('<p>','</p>');
-                $contenu = get_the_content();
-                $contenu = wp_trim_words($contenu, 10);
-                echo $contenu;
-            }
-        }
-  */
+/*
+get_the_title(); // retourne une chaîne qui contient le titre
+the_title() // echo du titre
+*/
+
   ?>      
   <?php if (have_posts()):
         while(have_posts()): the_post(); ?>
         <div class="carte">
+            
             <h4><?php the_title() ?></h4>
             <p><?php echo wp_trim_words(get_the_content(),10); ?></p>
             <p><a href="<?php echo get_permalink(); ?>">La suite</a> </p>
+            <?php the_category(); ?>
         </div>
        <?php endwhile; ?>
     <?php endif; ?>

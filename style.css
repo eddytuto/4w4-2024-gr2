@@ -409,6 +409,11 @@ body {
   text-align: center;
 }
 
+.carte .post-categories {
+  list-style-type: none;
+  display: flex;
+}
+
 /*
 <nav class="menu-principal-container">
   <ul id="menu-principal" class="menu"><li id="menu-item-36" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-36"><a href="http://localhost:81/4w4-2024-gr2/2020/10/07/350-5n1-communication-et-dynamique-dune-equipe-de-travail-45h/">Communication</a></li>

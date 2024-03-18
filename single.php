@@ -25,7 +25,7 @@
     <?php endif; ?>
   </div>
 
-    </div>
+</div>
     
     <div id="evenement" class="global">
         <section class="evenement__section">
