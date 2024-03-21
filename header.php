@@ -13,7 +13,7 @@
 
 </head>
 <body>
-    <div id="menu" class="global">
+    <div id="menu" class="global  clr-agencement-primaire">
 
         <?php 
         /* permet d'ajouter un logo qui a été choisi à l'aide du  personnaliser «customizer» */
