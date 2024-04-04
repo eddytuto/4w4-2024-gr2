@@ -19,11 +19,14 @@ Ce thème a été développé dans le cadre du cours 4W4
 /* Variables css                              */
 /* ////////////////////////////////////////// */
 @import "utile/couleurs";
-@import "utile/couleurs-class"
+
+
 
 /* ////////////////////////////////////////// */
 /* Class utile                            */
 /* ////////////////////////////////////////// */
+@import "utile/couleurs-class";
+@import "utile/flexbox";
 @import "utile/local";
 
 /* ////////////////////////////////////////// */

@@ -18,6 +18,7 @@
   <?php if (have_posts()):
         while(have_posts()): the_post(); ?>
         <div class="carte">
+            <?php the_post_thumbnail('medium'); ?>
             <h4><?php the_title() ?></h4>
             <p><?php the_content(); ?></p>
         </div>

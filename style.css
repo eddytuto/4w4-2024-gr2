@@ -21,6 +21,106 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 */
 /* Définition des variables de couleurs pour la palette de couleurs */
 /* Création du mapping des couleurs */
+:root {
+  --nb-element: 3;
+  --increment-angle: calc(360 / var(--nb-element));
+  /* 360/5 = 72) */
+  --angle-initial: 227;
+  /* couleur arrière plan */
+  --s-couleur-arriere: 100%;
+  --l-couleur-arriere: 50%;
+  /* couleur avant plan */
+  --s-couleur: 100%;
+  --l-couleur: 80%;
+  --hu1: var(--angle-initial);
+  --hu2: calc(var(--hu1) + var(--increment-angle));
+  --hu3: calc(var(--hu2) + var(--increment-angle));
+  --couleur-arriere-accueil: hsl(var(--hu1),var(--s-couleur-arriere), 65%);
+  --couleur-arriere-galerie: hsl(var(--hu2),var(--s-couleur-arriere), 75%);
+  --couleur-arriere-evenement: hsl(var(--hu3),var(--s-couleur-arriere), 70%);
+  --couleur-arriere-footer: hsl(var(--hu1),var(--s-couleur-arriere), 80%);
+}
+
+#entete {
+  --_couleur-arriere: hsl(var(--hu1), var(--s-couleur-arriere), 60%);
+  --_couleur: hsl(var(--hu1), var(--s-couleur-arriere), 20%);
+  --_couleur-ombrage: hsl(var(--hu1), var(--s-couleur-arriere), 50%);
+  /* Couleur du bouton */
+  --_couleur-bouton-1-active: hsl(var(--hu2),var(--s-couleur-arriere), 35%);
+  --_couleur-bouton-2-active: hsl(var(--hu2),var(--s-couleur-arriere), 45%);
+  --_couleur-bouton-1: hsl(var(--hu2),var(--s-couleur-arriere), 55%);
+  --_couleur-bouton-2: hsl(var(--hu2),var(--s-couleur-arriere), 65%);
+  --_couleur-bouton-hover-1: hsl(var(--hu2),var(--s-couleur-arriere), 75%);
+  --_couleur-bouton-hover-2: hsl(var(--hu2),var(--s-couleur-arriere), 80%);
+  --_couleur-bouton-text: hsl(var(--hu2),var(--s-couleur-arriere), 20%);
+  --_couleur-bouton-2: hsl(var(--hu2),var(--s-couleur-arriere), 49%);
+  --_couleur-arriere-vague: hsl(var(--hu1),var(--s-couleur-arriere), 65%);
+}
+
+#accueil {
+  --_couleur-arriere: hsl(var(--hu1),var(--s-couleur-arriere), 65%);
+  --_couleur: hsl(var(--hu1),var(--s-couleur-arriere), 25%);
+  /* Couleur des liens */
+  --_couleur-lien: hsl(var(--hu2),var(--s-couleur-arriere), 40%);
+  --_couleur-lien-hover: hsl(var(--hu1),var(--s-couleur-arriere), 45%);
+  --_couleur-lien-visited: hsl(var(--hu3),var(--s-couleur-arriere), 50%);
+  /* Couleurs blockquote */
+  --_couleur-arriere-blockquote: hsl(var(--hu1),var(--s-couleur-arriere), 80%);
+  --_couleur-blockquote: hsl(var(--hu1),var(--s-couleur-arriere), 20%);
+  --_couleur-bordure: hsl(var(--hu1), var(--s-couleur-arriere), 70%);
+  --_couleur-blockquote-first-letter: hsl(var(--hu1),var(--s-couleur-arriere), 60%);
+}
+
+#galerie {
+  --_couleur-arriere: hsl(var(--hu2),var(--s-couleur-arriere), 75%);
+  --_couleur: hsl(var(--hu2),var(--s-couleur-arriere), 35%);
+  /* Couleur des liens */
+  --_couleur-lien: hsl(var(--hu2),var(--s-couleur-arriere), 40%);
+  --_couleur-lien-hover: hsl(var(--hu1),var(--s-couleur-arriere), 45%);
+  --_couleur-lien-visited: hsl(var(--hu3),var(--s-couleur-arriere), 50%);
+  /* Couleurs blockquote */
+  --_couleur-arriere-blockquote: hsl(var(--hu1),var(--s-couleur-arriere), 80%);
+  --_couleur-blockquote: hsl(var(--hu1),var(--s-couleur-arriere), 20%);
+  --_couleur-bordure: hsl(var(--hu1), var(--s-couleur-arriere), 70%);
+  --_couleur-blockquote-first-letter: hsl(var(--hu1),var(--s-couleur-arriere), 60%);
+}
+
+#evenement {
+  --_couleur-arriere: hsl(var(--hu3),var(--s-couleur-arriere), 70%);
+  --_couleur: hsl(var(--hu1),var(--s-couleur-arriere), 30%);
+  /* Couleur des liens */
+  --_couleur-lien: hsl(var(--hu2),var(--s-couleur-arriere), 40%);
+  --_couleur-lien-hover: hsl(var(--hu1),var(--s-couleur-arriere), 45%);
+  --_couleur-lien-visited: hsl(var(--hu3),var(--s-couleur-arriere), 50%);
+  /* Couleurs blockquote */
+  --_couleur-arriere-blockquote: hsl(var(--hu1),var(--s-couleur-arriere), 80%);
+  --_couleur-blockquote: hsl(var(--hu1),var(--s-couleur-arriere), 20%);
+  --_couleur-bordure: hsl(var(--hu1), var(--s-couleur-arriere), 70%);
+  --_couleur-blockquote-first-letter: hsl(var(--hu1),var(--s-couleur-arriere), 60%);
+  --_couleur-arriere-vague: hsl(var(--hu1),var(--s-couleur-arriere), 80%);
+}
+
+#footer {
+  --_couleur-arriere: hsl(var(--hu1),var(--s-couleur-arriere), 80%);
+  --_couleur: hsl(var(--hu1),var(--s-couleur-arriere), 45%);
+  /* Couleur des liens */
+  --_couleur-lien: hsl(var(--hu2),var(--s-couleur-arriere), 40%);
+  --_couleur-lien-hover: hsl(var(--hu1),var(--s-couleur-arriere), 45%);
+  --_couleur-lien-visited: hsl(var(--hu3),var(--s-couleur-arriere), 50%);
+  /* Couleurs blockquote */
+  --_couleur-arriere-blockquote: hsl(var(--hu1),var(--s-couleur-arriere), 80%);
+  --_couleur-blockquote: hsl(var(--hu1),var(--s-couleur-arriere), 20%);
+  --_couleur-bordure: hsl(var(--hu1), var(--s-couleur-arriere), 70%);
+  --_couleur-blockquote-first-letter: hsl(var(--hu1),var(--s-couleur-arriere), 60%);
+}
+
+/* ////////////////////////////////////////// */
+/* Class utile                            */
+/* ////////////////////////////////////////// */
+/* création des classes de couleurs
+    .clr-primaire-100 {}
+    .bck-primaire-400{}
+*/
 .clr-primaire-100 {
   color: hsl(220, 100%, 85%);
 }
@@ -149,6 +249,8 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
   background-color: hsl(70, 100%, 15%);
 }
 
+/* Définit la règle de style à partir d'une couleur de texte $clr et une ou plusieurs en background $bck */
+/* création de l'ensemble de règle de style d'agencement de couleurs */
 .clr-agencement-primaire {
   color: hsl(220, 100%, 85%);
   background-image: linear-gradient(90deg, hsl(220, 100%, 15%), hsl(220, 100%, 60%));
@@ -169,102 +271,14 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
   background-color: hsl(70, 100%, 85%);
 }
 
-:root {
-  --nb-element: 3;
-  --increment-angle: calc(360 / var(--nb-element));
-  /* 360/5 = 72) */
-  --angle-initial: 227;
-  /* couleur arrière plan */
-  --s-couleur-arriere: 100%;
-  --l-couleur-arriere: 50%;
-  /* couleur avant plan */
-  --s-couleur: 100%;
-  --l-couleur: 80%;
-  --hu1: var(--angle-initial);
-  --hu2: calc(var(--hu1) + var(--increment-angle));
-  --hu3: calc(var(--hu2) + var(--increment-angle));
-  --couleur-arriere-accueil: hsl(var(--hu1),var(--s-couleur-arriere), 65%);
-  --couleur-arriere-galerie: hsl(var(--hu2),var(--s-couleur-arriere), 75%);
-  --couleur-arriere-evenement: hsl(var(--hu3),var(--s-couleur-arriere), 70%);
-  --couleur-arriere-footer: hsl(var(--hu1),var(--s-couleur-arriere), 80%);
+.flexbox {
+  display: flex;
+  justify-content: space-between;
+  align-self: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-#entete {
-  --_couleur-arriere: hsl(var(--hu1), var(--s-couleur-arriere), 60%);
-  --_couleur: hsl(var(--hu1), var(--s-couleur-arriere), 20%);
-  --_couleur-ombrage: hsl(var(--hu1), var(--s-couleur-arriere), 50%);
-  /* Couleur du bouton */
-  --_couleur-bouton-1-active: hsl(var(--hu2),var(--s-couleur-arriere), 35%);
-  --_couleur-bouton-2-active: hsl(var(--hu2),var(--s-couleur-arriere), 45%);
-  --_couleur-bouton-1: hsl(var(--hu2),var(--s-couleur-arriere), 55%);
-  --_couleur-bouton-2: hsl(var(--hu2),var(--s-couleur-arriere), 65%);
-  --_couleur-bouton-hover-1: hsl(var(--hu2),var(--s-couleur-arriere), 75%);
-  --_couleur-bouton-hover-2: hsl(var(--hu2),var(--s-couleur-arriere), 80%);
-  --_couleur-bouton-text: hsl(var(--hu2),var(--s-couleur-arriere), 20%);
-  --_couleur-bouton-2: hsl(var(--hu2),var(--s-couleur-arriere), 49%);
-  --_couleur-arriere-vague: hsl(var(--hu1),var(--s-couleur-arriere), 65%);
-}
-
-#accueil {
-  --_couleur-arriere: hsl(var(--hu1),var(--s-couleur-arriere), 65%);
-  --_couleur: hsl(var(--hu1),var(--s-couleur-arriere), 25%);
-  /* Couleur des liens */
-  --_couleur-lien: hsl(var(--hu2),var(--s-couleur-arriere), 40%);
-  --_couleur-lien-hover: hsl(var(--hu1),var(--s-couleur-arriere), 45%);
-  --_couleur-lien-visited: hsl(var(--hu3),var(--s-couleur-arriere), 50%);
-  /* Couleurs blockquote */
-  --_couleur-arriere-blockquote: hsl(var(--hu1),var(--s-couleur-arriere), 80%);
-  --_couleur-blockquote: hsl(var(--hu1),var(--s-couleur-arriere), 20%);
-  --_couleur-bordure: hsl(var(--hu1), var(--s-couleur-arriere), 70%);
-  --_couleur-blockquote-first-letter: hsl(var(--hu1),var(--s-couleur-arriere), 60%);
-}
-
-#galerie {
-  --_couleur-arriere: hsl(var(--hu2),var(--s-couleur-arriere), 75%);
-  --_couleur: hsl(var(--hu2),var(--s-couleur-arriere), 35%);
-  /* Couleur des liens */
-  --_couleur-lien: hsl(var(--hu2),var(--s-couleur-arriere), 40%);
-  --_couleur-lien-hover: hsl(var(--hu1),var(--s-couleur-arriere), 45%);
-  --_couleur-lien-visited: hsl(var(--hu3),var(--s-couleur-arriere), 50%);
-  /* Couleurs blockquote */
-  --_couleur-arriere-blockquote: hsl(var(--hu1),var(--s-couleur-arriere), 80%);
-  --_couleur-blockquote: hsl(var(--hu1),var(--s-couleur-arriere), 20%);
-  --_couleur-bordure: hsl(var(--hu1), var(--s-couleur-arriere), 70%);
-  --_couleur-blockquote-first-letter: hsl(var(--hu1),var(--s-couleur-arriere), 60%);
-}
-
-#evenement {
-  --_couleur-arriere: hsl(var(--hu3),var(--s-couleur-arriere), 70%);
-  --_couleur: hsl(var(--hu1),var(--s-couleur-arriere), 30%);
-  /* Couleur des liens */
-  --_couleur-lien: hsl(var(--hu2),var(--s-couleur-arriere), 40%);
-  --_couleur-lien-hover: hsl(var(--hu1),var(--s-couleur-arriere), 45%);
-  --_couleur-lien-visited: hsl(var(--hu3),var(--s-couleur-arriere), 50%);
-  /* Couleurs blockquote */
-  --_couleur-arriere-blockquote: hsl(var(--hu1),var(--s-couleur-arriere), 80%);
-  --_couleur-blockquote: hsl(var(--hu1),var(--s-couleur-arriere), 20%);
-  --_couleur-bordure: hsl(var(--hu1), var(--s-couleur-arriere), 70%);
-  --_couleur-blockquote-first-letter: hsl(var(--hu1),var(--s-couleur-arriere), 60%);
-  --_couleur-arriere-vague: hsl(var(--hu1),var(--s-couleur-arriere), 80%);
-}
-
-#footer {
-  --_couleur-arriere: hsl(var(--hu1),var(--s-couleur-arriere), 80%);
-  --_couleur: hsl(var(--hu1),var(--s-couleur-arriere), 45%);
-  /* Couleur des liens */
-  --_couleur-lien: hsl(var(--hu2),var(--s-couleur-arriere), 40%);
-  --_couleur-lien-hover: hsl(var(--hu1),var(--s-couleur-arriere), 45%);
-  --_couleur-lien-visited: hsl(var(--hu3),var(--s-couleur-arriere), 50%);
-  /* Couleurs blockquote */
-  --_couleur-arriere-blockquote: hsl(var(--hu1),var(--s-couleur-arriere), 80%);
-  --_couleur-blockquote: hsl(var(--hu1),var(--s-couleur-arriere), 20%);
-  --_couleur-bordure: hsl(var(--hu1), var(--s-couleur-arriere), 70%);
-  --_couleur-blockquote-first-letter: hsl(var(--hu1),var(--s-couleur-arriere), 60%);
-}
-
-/* ////////////////////////////////////////// */
-/* Class utile                            */
-/* ////////////////////////////////////////// */
 .bgc-text {
   background-color: rgba(255, 255, 255, 0.2);
   padding: 15px 20px;
