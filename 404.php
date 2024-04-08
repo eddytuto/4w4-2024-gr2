@@ -5,22 +5,16 @@
 ?>
 
 <?php get_header(); ?>
-<h2>index.php</h2>
+<h2>404.php</h2>
 <div id="accueil" class="global">
         <section class="accueil__section">
             <h2>Accueil (h2)</h2>
         <div class="flexbox">  
      
-  <?php if (have_posts()):
-        while(have_posts()): the_post(); 
-        ?>
-        <div class="carte">
-            <h5><?php the_title() ?></h5> 
-            <p><?php echo wp_trim_words(get_the_content(),10); ?></p>
-
-        </div>
-       <?php endwhile; ?>
-    <?php endif; ?>
+        <p>L'adresse que vous avez entrez n'existe pas. Vous pouvez revenir à la page d'accueil en cliquant sur ce lien</p>
+        <?php  echo get_bloginfo('name'); ?> 
+        <?php  echo get_bloginfo('url'); ?> 
+        <a href="<?php  echo get_bloginfo('url'); ?>"><?php  echo get_bloginfo('name'); ?></a>
   </div>
 </div>
 
