@@ -593,15 +593,13 @@ body {
 .menu-principal-container {
   border: 1px solid #aaa;
   position: absolute;
-  top: 0;
-  left: 50px;
+  top: 100px;
+  right: -150px;
   z-index: 2;
-  transform: translateX(-200%);
 }
 @media screen and (min-width: 700px) {
   .menu-principal-container {
     position: static;
-    transform: translateX(0);
   }
 }
 
@@ -628,7 +626,7 @@ body {
   display: block;
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
 }
 @media screen and (min-width: 700px) {
   #burger {
@@ -637,5 +635,5 @@ body {
 }
 
 #chk_burger:checked ~ .menu-principal-container {
-  transform: translateX(0);
+  right: 0;
 }/*# sourceMappingURL=style.css.map */

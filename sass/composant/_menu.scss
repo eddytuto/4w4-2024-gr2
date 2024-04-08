@@ -13,13 +13,13 @@
 .menu-principal-container { //nav
     border :  1px solid #aaa;
     position: absolute;
-    top:0;
-    left:50px;
+    top:100px;
+    right:-150px;
     z-index: 2;
-    transform : translateX(-200%);
+    // transform : translateX(500%);
     @media screen and (min-width:700px) {
       position: static;
-      transform : translateX(0);
+     // transform : translateX(0);
 }
 }
 
@@ -53,7 +53,7 @@
   display: block;
   position: absolute;
   top:0;
-  left:0;
+  right:0;
   @media screen and (min-width:700px) {
     display : none;
   }
@@ -61,5 +61,6 @@
 
 
 #chk_burger:checked ~ .menu-principal-container {
-  transform : translateX(0);
+  // transform : translateX(0);
+  right : 0;
 }
