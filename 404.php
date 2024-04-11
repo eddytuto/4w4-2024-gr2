@@ -5,19 +5,27 @@
 ?>
 
 <?php get_header(); ?>
-<h2>404.php</h2>
+
 <div id="accueil" class="global">
         <section class="accueil__section">
-            <h2>Accueil (h2)</h2>
+            <h2>Erreur 404</h2>
+            <h3>Vous êtes sur le bon domaine mais la page que essayez d'atteindre n'existe pas</h3>
         <div class="flexbox">  
      
-        <p>L'adresse que vous avez entrez n'existe pas. Vous pouvez revenir à la page d'accueil en cliquant sur ce lien</p>
+        <p> Vous pouvez revenir à la page d'accueil en cliquant sur ce lien</p>
         <?php  echo get_bloginfo('name'); ?> 
         <?php  echo get_bloginfo('url'); ?> 
         <a href="<?php  echo get_bloginfo('url'); ?>"><?php  echo get_bloginfo('name'); ?></a>
+        <?php
+        $categories = get_categories();
+        foreach ($categories as $categorie) {
+            echo '<a href="'.get_category_link($categorie->term_id).'">'.$categorie->name.'</a>';
+        }
+        ?>
+
+
   </div>
 </div>
-
 
     <div id="footer" class="global">
         <footer class="footer__section">
