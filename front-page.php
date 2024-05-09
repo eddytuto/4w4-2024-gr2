@@ -49,6 +49,7 @@ the_title() // echo du titre
             <h2>Galerie  (h2)</h2>
             <p>Lorem ipsum dolor sit amet,<a href="#">Lorem, ipsum.</a>  consectetur adipisicing elit. Minima <a href="#">Lorem, ipsum.</a>  velit qui unde odit quae, magni labore maiores facilis obcaecati dolore, ullam facere. Ducimus veniam reprehenderit, temporibus ab at possimus fugit?</p>
             <blockquote>Galerie ipsum, dolor sit amet consectetur adipisicing elit. Accusantium a, repellat alias qui ut in ratione optio quia quae minus repudiandae ducimus aliquid aperiam unde atque tempore non. Non, magnam.</blockquote>
+            <?php echo do_shortcode('[em_destination]'); ?>
         </section>
     </div>
     <div id="evenement" class="global">
@@ -64,6 +65,7 @@ the_title() // echo du titre
               $categories = get_categories();
               foreach ($categories as $elm_categorie){
                 $nom = $elm_categorie->name;
+                $id_categorie = $elm_categorie->term_id;
                 $description = wp_trim_words($elm_categorie->description, 10);
                 $nombre_destination = $elm_categorie->count;
                 $url_categorie = get_term_link($elm_categorie);
@@ -71,6 +73,7 @@ the_title() // echo du titre
                 <div class="carte">
                     <h3><?php echo $nom ?></h3>
                     <p><?php echo $description ?></p>
+                    <p>id de la catégorie : <?php echo $id_categorie ?></p>
                     <p>Nombre de destination : <?php echo $nombre_destination ?></p>
                     <a href="<?php echo $url_categorie?>"><?php echo $nom ?> ... </a>
               </div>

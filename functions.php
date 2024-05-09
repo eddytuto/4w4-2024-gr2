@@ -3,6 +3,12 @@ add_theme_support( 'menus' );
 add_theme_support('custom-logo');
 add_theme_support( 'post-thumbnails' );
 
+/*
+add_action( 'wp_enqueue_scripts', 'remove_global_styles' );
+function remove_global_styles(){
+    wp_dequeue_style( 'global-styles' );
+}
+*/
 
 /**
  * Modifie la requete principale de Wordpress avant qu'elle soit exécuté
