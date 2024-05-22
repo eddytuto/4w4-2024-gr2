@@ -616,7 +616,7 @@ body {
   align-items: flex-start;
   gap: 2rem;
   justify-content: flex-start;
-  padding: 1rem 2rem;
+  padding: 1rem 3rem;
 }
 @media screen and (min-width: 700px) {
   .entete__menu {
@@ -660,6 +660,7 @@ body {
 
 #burger {
   display: block;
+  transform: translateY(-5px);
 }
 @media screen and (min-width: 700px) {
   #burger {
