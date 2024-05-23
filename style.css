@@ -338,7 +338,9 @@ blockquote::first-letter {
   color: var(--_couleur-blockquote-first-letter);
 }
 
-button.entete__button {
+.entete__button {
+  text-decoration: none;
+  display: block;
   background-image: linear-gradient(163deg, var(--_couleur-bouton-1), var(--_couleur-bouton-2));
   font-size: clamp(1.5rem, 0.1458rem + 4.3333vw, 3.125rem);
   border-radius: 10px;
@@ -351,12 +353,12 @@ button.entete__button {
   text-align: center;
   cursor: pointer;
 }
-button.entete__button:hover {
+.entete__button:hover {
   background-image: linear-gradient(163deg, var(--_couleur-bouton-hover-1), var(--_couleur-bouton-hover-2));
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   transform: translateY(-6px);
 }
-button.entete__button:active {
+.entete__button:active {
   transform: translateY(0);
   background-image: linear-gradient(163deg, var(--_couleur-bouton-active-1), var(--_couleur-bouton-active-2));
 }

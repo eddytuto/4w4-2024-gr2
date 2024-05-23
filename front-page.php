@@ -15,7 +15,9 @@
                 <h2 class="bgc-text"><?php echo get_bloginfo('description'); ?></h2>
                 <h3 class="bgc-text">TIM - Collège de Maisonneuve</h3>
             </div>   
-            <div class="entete__header__button"><button class="entete__button">Événements</button></div>
+            <div class="entete__header__button">
+        <a class="entete__button" href="http://localhost:81/4w4-2024-gr2/conference/">Conférence de la semaine</a>
+        </div>
         </section>
 <?php get_template_part("gabarit/vague"); ?>
     </div>
