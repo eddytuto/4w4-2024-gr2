@@ -1,5 +1,5 @@
 /*
-Theme Name: theme-gr2
+Theme Name: tp2
 Theme URI: https://referenced.ca
 Author: Eddy Martin
 Author URI: https://wordpress.org/
@@ -18,14 +18,41 @@ Ce thème a été développé dans le cadre du cours 4W4
 /* ////////////////////////////////////////// */
 /* Variables css                              */
 /* ////////////////////////////////////////// */
-@import "variables";
+@import "utile/couleurs";
+
+
+
+/* ////////////////////////////////////////// */
+/* Class utile                            */
+/* ////////////////////////////////////////// */
+@import "utile/couleurs-class";
+@import "utile/flexbox";
+@import "utile/local";
 
 /* ////////////////////////////////////////// */
 /* règles de base                             */
 /* ////////////////////////////////////////// */
 @import "base/h";
-
+@import "base/bouton";
+@import "base/lien";
 /* ////////////////////////////////////////// */
 /* règles de la pagination                             */
 /* ////////////////////////////////////////// */
 @import "layout";
+
+@import "effet/vague";
+
+@import "effet/diagonal";
+
+@import "entete";
+@import "footer";
+
+/* ////////////////////////////////////////// */
+/* composants                             */
+/* ////////////////////////////////////////// */
+@import "composant/sociaux";
+@import "composant/recherche";
+@import "composant/carte";
+@import "composant/menu";
+
+

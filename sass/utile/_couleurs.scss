@@ -1,0 +1,197 @@
+
+
+
+/*
+https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
+*/
+
+
+/* Définition des variables de couleurs pour la palette de couleurs */
+
+$--clr-bleu-pale    : hsl(220, 100%, 85%);
+$--clr-bleu-leger  : hsl(220, 100%, 60%);
+$--clr-bleu-moyen  : hsl(220, 100%, 30%);    
+$--clr-bleu-fonce  : hsl(220, 100%, 15%);
+
+
+$--clr-orange-pale: hsl(40, 100%, 85%);
+$--clr-orange-leger  : hsl(40, 100%, 50%);
+$--clr-orange-moyen  : hsl(40, 100%, 30%);
+$--clr-orange-fonce  : hsl(40, 100%, 15%);
+
+$--clr-rouge-pale: hsl(10, 100%, 85%);
+$--clr-rouge-leger  : hsl(10, 100%, 50%);
+$--clr-rouge-moyen  : hsl(10, 100%, 30%);
+$--clr-rouge-fonce  : hsl(10, 100%, 15%);
+
+$--clr-vert-pale: hsl(70, 100%, 85%);
+$--clr-vert-leger  : hsl(70, 100%, 50%);
+$--clr-vert-moyen  : hsl(70, 100%, 30%);
+$--clr-vert-fonce  : hsl(70, 100%, 15%);
+
+
+/* Création du mapping des couleurs */
+
+$defaut: (
+    primaire : (
+        100: $--clr-bleu-pale,
+        200: $--clr-bleu-leger,
+        300: $--clr-bleu-moyen,
+        400: $--clr-bleu-fonce
+    ),
+    secondaire : (
+        100: $--clr-orange-pale,
+        200: $--clr-orange-leger,
+        300: $--clr-orange-moyen,
+        400: $--clr-orange-fonce
+    ),
+    ternaire : (
+        100: $--clr-rouge-pale,
+        200: $--clr-rouge-leger,
+        300: $--clr-rouge-moyen,
+        400: $--clr-rouge-fonce
+    ),
+    vert : (
+        100: $--clr-vert-pale,
+        200: $--clr-vert-leger,
+        300: $--clr-vert-moyen,
+        400: $--clr-vert-fonce
+    )
+);
+
+    $agencement-couleur :(
+        primaire: ($--clr-bleu-pale, ($--clr-bleu-fonce, $--clr-bleu-leger)),
+        secondaire: ($--clr-orange-fonce, $--clr-orange-pale),
+        ternaire: ($--clr-rouge-fonce, $--clr-rouge-pale),
+        vert: ($--clr-vert-fonce, $--clr-vert-pale)
+    );
+    
+    
+
+
+
+
+
+:root {
+
+--nb-element : 3; // triade 
+--increment-angle : calc(360 / var(--nb-element));
+/* 360/5 = 72) */
+--angle-initial : 227;
+/* couleur arrière plan */
+--s-couleur-arriere : 100%; // saturation
+--l-couleur-arriere : 50%;  // luminosité
+/* couleur avant plan */
+--s-couleur : 100%; // saturation
+--l-couleur : 80%; // luminosité
+
+--hu1 : var(--angle-initial);
+--hu2 : calc(var(--hu1) + var(--increment-angle));
+--hu3 : calc(var(--hu2) + var(--increment-angle));
+
+--couleur-arriere-accueil: hsl(var(--hu1),var(--s-couleur-arriere),  65%);
+--couleur-arriere-galerie :  hsl(var(--hu2),var(--s-couleur-arriere), 75%);
+--couleur-arriere-evenement: hsl(var(--hu3),var(--s-couleur-arriere), 70%);
+--couleur-arriere-footer: hsl(var(--hu1),var(--s-couleur-arriere), 80%);
+
+
+}
+
+#entete {
+--_couleur-arriere: hsl(var(--hu1), var(--s-couleur-arriere), 60%);
+--_couleur: hsl(var(--hu1), var(--s-couleur-arriere), 20%);
+--_couleur-ombrage: hsl(var(--hu1), var(--s-couleur-arriere), 50%);
+
+/* Couleur du bouton */
+--_couleur-bouton-1-active : hsl(var(--hu2),var(--s-couleur-arriere), 35%);
+--_couleur-bouton-2-active : hsl(var(--hu2),var(--s-couleur-arriere), 45%);
+--_couleur-bouton-1 : hsl(var(--hu2),var(--s-couleur-arriere), 55%);
+--_couleur-bouton-2 : hsl(var(--hu2),var(--s-couleur-arriere), 65%);
+--_couleur-bouton-hover-1 : hsl(var(--hu2),var(--s-couleur-arriere), 75%);
+--_couleur-bouton-hover-2 : hsl(var(--hu2),var(--s-couleur-arriere), 80%);
+--_couleur-bouton-text : hsl(var(--hu2),var(--s-couleur-arriere), 20%);
+--_couleur-bouton-2 : hsl(var(--hu2),var(--s-couleur-arriere), 49%);
+
+--_couleur-arriere-vague : hsl(var(--hu1),var(--s-couleur-arriere),  65%);
+
+}
+
+
+#accueil{
+--_couleur-arriere: hsl(var(--hu1),var(--s-couleur-arriere),  65%);
+--_couleur: hsl(var(--hu1),var(--s-couleur-arriere),  25%);
+/* Couleur des liens */
+--_couleur-lien: hsl(var(--hu2),var(--s-couleur-arriere), 40%);
+--_couleur-lien-hover: hsl(var(--hu1),var(--s-couleur-arriere), 45%);
+--_couleur-lien-visited: hsl(var(--hu3),var(--s-couleur-arriere), 50%);
+
+
+/* Couleurs blockquote */
+--_couleur-arriere-blockquote :  hsl(var(--hu1),var(--s-couleur-arriere), 80%);
+--_couleur-blockquote :  hsl(var(--hu1),var(--s-couleur-arriere), 20%);
+--_couleur-bordure :  hsl(var(--hu1), var(--s-couleur-arriere), 70%);
+--_couleur-blockquote-first-letter :  hsl(var(--hu1),var(--s-couleur-arriere), 60%);
+}
+
+#galerie{
+--_couleur-arriere: hsl(var(--hu2),var(--s-couleur-arriere), 75%);
+--_couleur: hsl(var(--hu2),var(--s-couleur-arriere), 35%);
+
+/* Couleur des liens */
+--_couleur-lien: hsl(var(--hu2),var(--s-couleur-arriere), 40%);
+--_couleur-lien-hover: hsl(var(--hu1),var(--s-couleur-arriere), 45%);
+--_couleur-lien-visited: hsl(var(--hu3),var(--s-couleur-arriere), 50%);
+
+
+/* Couleurs blockquote */
+--_couleur-arriere-blockquote :  hsl(var(--hu1),var(--s-couleur-arriere), 80%);
+--_couleur-blockquote :  hsl(var(--hu1),var(--s-couleur-arriere), 20%);
+--_couleur-bordure :  hsl(var(--hu1), var(--s-couleur-arriere), 70%);
+--_couleur-blockquote-first-letter :  hsl(var(--hu1),var(--s-couleur-arriere), 60%);
+
+}
+
+#evenement{
+--_couleur-arriere: hsl(var(--hu3),var(--s-couleur-arriere), 70%);
+--_couleur: hsl(var(--hu1),var(--s-couleur-arriere), 30%);
+
+/* Couleur des liens */
+--_couleur-lien: hsl(var(--hu2),var(--s-couleur-arriere), 40%);
+--_couleur-lien-hover: hsl(var(--hu1),var(--s-couleur-arriere), 45%);
+--_couleur-lien-visited: hsl(var(--hu3),var(--s-couleur-arriere), 50%);
+
+
+/* Couleurs blockquote */
+--_couleur-arriere-blockquote :  hsl(var(--hu1),var(--s-couleur-arriere), 80%);
+--_couleur-blockquote :  hsl(var(--hu1),var(--s-couleur-arriere), 20%);
+--_couleur-bordure :  hsl(var(--hu1), var(--s-couleur-arriere), 70%);
+--_couleur-blockquote-first-letter :  hsl(var(--hu1),var(--s-couleur-arriere), 60%);
+
+--_couleur-arriere-vague : hsl(var(--hu1),var(--s-couleur-arriere), 80%);
+}
+
+
+
+#footer{
+
+--_couleur-arriere: hsl(var(--hu1),var(--s-couleur-arriere), 80%);
+--_couleur: hsl(var(--hu1),var(--s-couleur-arriere), 45%);
+
+/* Couleur des liens */
+--_couleur-lien: hsl(var(--hu2),var(--s-couleur-arriere), 40%);
+--_couleur-lien-hover: hsl(var(--hu1),var(--s-couleur-arriere), 45%);
+--_couleur-lien-visited: hsl(var(--hu3),var(--s-couleur-arriere), 50%);
+
+
+/* Couleurs blockquote */
+--_couleur-arriere-blockquote :  hsl(var(--hu1),var(--s-couleur-arriere), 80%);
+--_couleur-blockquote :  hsl(var(--hu1),var(--s-couleur-arriere), 20%);
+--_couleur-bordure :  hsl(var(--hu1), var(--s-couleur-arriere), 70%);
+--_couleur-blockquote-first-letter :  hsl(var(--hu1),var(--s-couleur-arriere), 60%);
+
+}
+
+
+
+
+

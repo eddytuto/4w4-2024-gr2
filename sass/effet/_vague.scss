@@ -1,0 +1,21 @@
+.vague {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.vague svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 64px;
+    transform: rotateY(180deg);
+}
+
+.remplissage {
+    fill: var(--_couleur-arriere-vague);
+}
+

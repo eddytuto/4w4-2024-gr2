@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-Theme Name: theme-gr2
+Theme Name: tp2
 Theme URI: https://referenced.ca
 Author: Eddy Martin
 Author URI: https://wordpress.org/
@@ -19,12 +19,274 @@ Ce thème a été développé dans le cadre du cours 4W4
 /*
 https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 */
+/* Définition des variables de couleurs pour la palette de couleurs */
+/* Création du mapping des couleurs */
 :root {
-  --couleur-arriere-entete: #77c2e5;
-  --couleur-arriere-accueil: #c1d32d;
-  --couleur-arriere-evenement: #dd8211;
-  --couleur-arriere-galerie: #8cee99;
-  --couleur-arriere-footer: #1d3f9f;
+  --nb-element: 3;
+  --increment-angle: calc(360 / var(--nb-element));
+  /* 360/5 = 72) */
+  --angle-initial: 227;
+  /* couleur arrière plan */
+  --s-couleur-arriere: 100%;
+  --l-couleur-arriere: 50%;
+  /* couleur avant plan */
+  --s-couleur: 100%;
+  --l-couleur: 80%;
+  --hu1: var(--angle-initial);
+  --hu2: calc(var(--hu1) + var(--increment-angle));
+  --hu3: calc(var(--hu2) + var(--increment-angle));
+  --couleur-arriere-accueil: hsl(var(--hu1),var(--s-couleur-arriere), 65%);
+  --couleur-arriere-galerie: hsl(var(--hu2),var(--s-couleur-arriere), 75%);
+  --couleur-arriere-evenement: hsl(var(--hu3),var(--s-couleur-arriere), 70%);
+  --couleur-arriere-footer: hsl(var(--hu1),var(--s-couleur-arriere), 80%);
+}
+
+#entete {
+  --_couleur-arriere: hsl(var(--hu1), var(--s-couleur-arriere), 60%);
+  --_couleur: hsl(var(--hu1), var(--s-couleur-arriere), 20%);
+  --_couleur-ombrage: hsl(var(--hu1), var(--s-couleur-arriere), 50%);
+  /* Couleur du bouton */
+  --_couleur-bouton-1-active: hsl(var(--hu2),var(--s-couleur-arriere), 35%);
+  --_couleur-bouton-2-active: hsl(var(--hu2),var(--s-couleur-arriere), 45%);
+  --_couleur-bouton-1: hsl(var(--hu2),var(--s-couleur-arriere), 55%);
+  --_couleur-bouton-2: hsl(var(--hu2),var(--s-couleur-arriere), 65%);
+  --_couleur-bouton-hover-1: hsl(var(--hu2),var(--s-couleur-arriere), 75%);
+  --_couleur-bouton-hover-2: hsl(var(--hu2),var(--s-couleur-arriere), 80%);
+  --_couleur-bouton-text: hsl(var(--hu2),var(--s-couleur-arriere), 20%);
+  --_couleur-bouton-2: hsl(var(--hu2),var(--s-couleur-arriere), 49%);
+  --_couleur-arriere-vague: hsl(var(--hu1),var(--s-couleur-arriere), 65%);
+}
+
+#accueil {
+  --_couleur-arriere: hsl(var(--hu1),var(--s-couleur-arriere), 65%);
+  --_couleur: hsl(var(--hu1),var(--s-couleur-arriere), 25%);
+  /* Couleur des liens */
+  --_couleur-lien: hsl(var(--hu2),var(--s-couleur-arriere), 40%);
+  --_couleur-lien-hover: hsl(var(--hu1),var(--s-couleur-arriere), 45%);
+  --_couleur-lien-visited: hsl(var(--hu3),var(--s-couleur-arriere), 50%);
+  /* Couleurs blockquote */
+  --_couleur-arriere-blockquote: hsl(var(--hu1),var(--s-couleur-arriere), 80%);
+  --_couleur-blockquote: hsl(var(--hu1),var(--s-couleur-arriere), 20%);
+  --_couleur-bordure: hsl(var(--hu1), var(--s-couleur-arriere), 70%);
+  --_couleur-blockquote-first-letter: hsl(var(--hu1),var(--s-couleur-arriere), 60%);
+}
+
+#galerie {
+  --_couleur-arriere: hsl(var(--hu2),var(--s-couleur-arriere), 75%);
+  --_couleur: hsl(var(--hu2),var(--s-couleur-arriere), 35%);
+  /* Couleur des liens */
+  --_couleur-lien: hsl(var(--hu2),var(--s-couleur-arriere), 40%);
+  --_couleur-lien-hover: hsl(var(--hu1),var(--s-couleur-arriere), 45%);
+  --_couleur-lien-visited: hsl(var(--hu3),var(--s-couleur-arriere), 50%);
+  /* Couleurs blockquote */
+  --_couleur-arriere-blockquote: hsl(var(--hu1),var(--s-couleur-arriere), 80%);
+  --_couleur-blockquote: hsl(var(--hu1),var(--s-couleur-arriere), 20%);
+  --_couleur-bordure: hsl(var(--hu1), var(--s-couleur-arriere), 70%);
+  --_couleur-blockquote-first-letter: hsl(var(--hu1),var(--s-couleur-arriere), 60%);
+}
+
+#evenement {
+  --_couleur-arriere: hsl(var(--hu3),var(--s-couleur-arriere), 70%);
+  --_couleur: hsl(var(--hu1),var(--s-couleur-arriere), 30%);
+  /* Couleur des liens */
+  --_couleur-lien: hsl(var(--hu2),var(--s-couleur-arriere), 40%);
+  --_couleur-lien-hover: hsl(var(--hu1),var(--s-couleur-arriere), 45%);
+  --_couleur-lien-visited: hsl(var(--hu3),var(--s-couleur-arriere), 50%);
+  /* Couleurs blockquote */
+  --_couleur-arriere-blockquote: hsl(var(--hu1),var(--s-couleur-arriere), 80%);
+  --_couleur-blockquote: hsl(var(--hu1),var(--s-couleur-arriere), 20%);
+  --_couleur-bordure: hsl(var(--hu1), var(--s-couleur-arriere), 70%);
+  --_couleur-blockquote-first-letter: hsl(var(--hu1),var(--s-couleur-arriere), 60%);
+  --_couleur-arriere-vague: hsl(var(--hu1),var(--s-couleur-arriere), 80%);
+}
+
+#footer {
+  --_couleur-arriere: hsl(var(--hu1),var(--s-couleur-arriere), 80%);
+  --_couleur: hsl(var(--hu1),var(--s-couleur-arriere), 45%);
+  /* Couleur des liens */
+  --_couleur-lien: hsl(var(--hu2),var(--s-couleur-arriere), 40%);
+  --_couleur-lien-hover: hsl(var(--hu1),var(--s-couleur-arriere), 45%);
+  --_couleur-lien-visited: hsl(var(--hu3),var(--s-couleur-arriere), 50%);
+  /* Couleurs blockquote */
+  --_couleur-arriere-blockquote: hsl(var(--hu1),var(--s-couleur-arriere), 80%);
+  --_couleur-blockquote: hsl(var(--hu1),var(--s-couleur-arriere), 20%);
+  --_couleur-bordure: hsl(var(--hu1), var(--s-couleur-arriere), 70%);
+  --_couleur-blockquote-first-letter: hsl(var(--hu1),var(--s-couleur-arriere), 60%);
+}
+
+/* ////////////////////////////////////////// */
+/* Class utile                            */
+/* ////////////////////////////////////////// */
+/* création des classes de couleurs
+    .clr-primaire-100 {}
+    .bck-primaire-400{}
+*/
+.clr-primaire-100 {
+  color: hsl(220, 100%, 85%);
+}
+
+.bck-primaire-100 {
+  background-color: hsl(220, 100%, 85%);
+}
+
+.clr-primaire-200 {
+  color: hsl(220, 100%, 60%);
+}
+
+.bck-primaire-200 {
+  background-color: hsl(220, 100%, 60%);
+}
+
+.clr-primaire-300 {
+  color: hsl(220, 100%, 30%);
+}
+
+.bck-primaire-300 {
+  background-color: hsl(220, 100%, 30%);
+}
+
+.clr-primaire-400 {
+  color: hsl(220, 100%, 15%);
+}
+
+.bck-primaire-400 {
+  background-color: hsl(220, 100%, 15%);
+}
+
+.clr-secondaire-100 {
+  color: hsl(40, 100%, 85%);
+}
+
+.bck-secondaire-100 {
+  background-color: hsl(40, 100%, 85%);
+}
+
+.clr-secondaire-200 {
+  color: hsl(40, 100%, 50%);
+}
+
+.bck-secondaire-200 {
+  background-color: hsl(40, 100%, 50%);
+}
+
+.clr-secondaire-300 {
+  color: hsl(40, 100%, 30%);
+}
+
+.bck-secondaire-300 {
+  background-color: hsl(40, 100%, 30%);
+}
+
+.clr-secondaire-400 {
+  color: hsl(40, 100%, 15%);
+}
+
+.bck-secondaire-400 {
+  background-color: hsl(40, 100%, 15%);
+}
+
+.clr-ternaire-100 {
+  color: hsl(10, 100%, 85%);
+}
+
+.bck-ternaire-100 {
+  background-color: hsl(10, 100%, 85%);
+}
+
+.clr-ternaire-200 {
+  color: hsl(10, 100%, 50%);
+}
+
+.bck-ternaire-200 {
+  background-color: hsl(10, 100%, 50%);
+}
+
+.clr-ternaire-300 {
+  color: hsl(10, 100%, 30%);
+}
+
+.bck-ternaire-300 {
+  background-color: hsl(10, 100%, 30%);
+}
+
+.clr-ternaire-400 {
+  color: hsl(10, 100%, 15%);
+}
+
+.bck-ternaire-400 {
+  background-color: hsl(10, 100%, 15%);
+}
+
+.clr-vert-100 {
+  color: hsl(70, 100%, 85%);
+}
+
+.bck-vert-100 {
+  background-color: hsl(70, 100%, 85%);
+}
+
+.clr-vert-200 {
+  color: hsl(70, 100%, 50%);
+}
+
+.bck-vert-200 {
+  background-color: hsl(70, 100%, 50%);
+}
+
+.clr-vert-300 {
+  color: hsl(70, 100%, 30%);
+}
+
+.bck-vert-300 {
+  background-color: hsl(70, 100%, 30%);
+}
+
+.clr-vert-400 {
+  color: hsl(70, 100%, 15%);
+}
+
+.bck-vert-400 {
+  background-color: hsl(70, 100%, 15%);
+}
+
+/* Définit la règle de style à partir d'une couleur de texte $clr et une ou plusieurs en background $bck */
+/* création de l'ensemble de règle de style d'agencement de couleurs */
+.clr-agencement-primaire {
+  color: hsl(220, 100%, 85%);
+  background-image: linear-gradient(90deg, hsl(220, 100%, 15%), hsl(220, 100%, 60%));
+}
+
+.clr-agencement-secondaire {
+  color: hsl(40, 100%, 15%);
+  background-color: hsl(40, 100%, 85%);
+}
+
+.clr-agencement-ternaire {
+  color: hsl(10, 100%, 15%);
+  background-color: hsl(10, 100%, 85%);
+}
+
+.clr-agencement-vert {
+  color: hsl(70, 100%, 15%);
+  background-color: hsl(70, 100%, 85%);
+}
+
+.flexbox {
+  display: flex;
+  justify-content: space-between;
+  align-self: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.bgc-text {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 15px 20px;
+}
+@media screen and (min-width: 1100px) {
+  .bgc-text {
+    background-color: transparent;
+  }
 }
 
 /* ////////////////////////////////////////// */
@@ -38,18 +300,102 @@ https://clamp.font-size.app/?config=eyJyb290IjoiMTYiLCJtaW5XaWR0aCI6IjUwMHB4Iiwi
 
 */
 h1 {
-  font-size: clamp(1.5rem, -2.875rem + 14vw, 5rem);
-  color: rgba(9, 41, 24, 0.3);
+  font-size: clamp(1.875rem, -1.25rem + 10vw, 5.625rem);
+  text-shadow: 3px 5px 6px var(--_couleur-ombrage);
+  font-weight: bold;
+  letter-spacing: -3px;
 }
 
 h2 {
-  font-size: clamp(1rem, -0.5714rem + 6.2857vw, 3.75rem);
-  color: rgba(9, 41, 24, 0.7);
+  font-size: clamp(1.5625rem, -0.2604rem + 5.8333vw, 3.75rem);
+  font-weight: bold;
+}
+
+h3 {
+  font-size: clamp(1.4375rem, 0.0313rem + 4.5vw, 3.125rem);
+  font-weight: bold;
+}
+
+p {
+  font-size: clamp(1rem, 0.4792rem + 1.6667vw, 1.625rem);
+  line-height: 1.8rem;
+  padding: 2rem 0;
+}
+
+blockquote {
+  background-color: var(--_couleur-arriere-blockquote);
+  color: var(--_couleur-blockquote);
+  padding: 2rem;
+  width: 95%;
+  font-size: clamp(1.25rem, 0.7292rem + 1.6667vw, 1.875rem);
+  font-style: italic;
+  border-left: 10px solid var(--_couleur-bordure);
+}
+
+blockquote::first-letter {
+  font-size: clamp(1.5625rem, -0.2604rem + 5.8333vw, 3.75rem);
+  font-weight: bold;
+  color: var(--_couleur-blockquote-first-letter);
+}
+
+.entete__button {
+  text-decoration: none;
+  display: block;
+  background-image: linear-gradient(163deg, var(--_couleur-bouton-1), var(--_couleur-bouton-2));
+  font-size: clamp(1.5rem, 0.1458rem + 4.3333vw, 3.125rem);
+  border-radius: 10px;
+  border: 2ps solid #555;
+  padding: 16px 24px;
+  margin: 20px;
+  transition: transform 0.1s;
+  transform: translateY(0);
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+}
+.entete__button:hover {
+  background-image: linear-gradient(163deg, var(--_couleur-bouton-hover-1), var(--_couleur-bouton-hover-2));
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-6px);
+}
+.entete__button:active {
+  transform: translateY(0);
+  background-image: linear-gradient(163deg, var(--_couleur-bouton-active-1), var(--_couleur-bouton-active-2));
+}
+
+/*
+https://getcssscan.com/css-buttons-examples
+*/
+a {
+  color: var(--couleur-lien);
+}
+a:visited {
+  color: var(--couleur-lien-visited);
+}
+a:hover, a:focus, a:active {
+  color: var(--couleur-lien-hover);
+}
+a:focus {
+  outline: thin dotted;
+}
+a:hover, a:active {
+  outline: 0;
 }
 
 /* ////////////////////////////////////////// */
 /* règles de la pagination                             */
 /* ////////////////////////////////////////// */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -59,33 +405,271 @@ body {
 .global {
   display: flex;
   justify-content: center;
-  min-height: 30vh;
 }
 
 .global > section,
-.global > header,
 .global > footer {
-  flex: 0 1 900px;
-  background-color: rgba(23, 84, 215, 0.1);
-  padding: 5rem 1rem;
+  flex: 0 1 1100px;
+  padding: 10rem 1rem;
+}
+
+.entete__menu, .entete__header {
+  flex: 0 1 1500px;
+  padding: 3rem 0 0 0;
+  position: relative;
 }
 
 #entete {
-  background-color: var(--couleur-arriere-entete);
+  background-color: var(--_couleur-arriere);
+  color: var(--_couleur);
+  position: relative;
 }
 
 #accueil {
-  background-color: var(--couleur-arriere-accueil);
+  background-color: var(--_couleur-arriere);
+  color: var(--_couleur);
 }
 
 #galerie {
-  background-color: var(--couleur-arriere-galerie);
+  background-color: var(--couleur-arriere-accueil);
+  color: var(--_couleur);
+  z-index: 1;
+  background: linear-gradient(180deg, var(--couleur-arriere-accueil) 50%, var(--couleur-arriere-evenement) 50%);
 }
 
 #evenement {
-  background-color: var(--couleur-arriere-evenement);
+  background-color: var(--_couleur-arriere);
+  color: var(--_couleur);
+  position: relative;
 }
 
 #footer {
-  background-color: var(--couleur-arriere-footer);
+  background-color: var(--_couleur-arriere);
+  color: var(--_couleur);
+}
+
+.vague {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.vague svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 64px;
+  transform: rotateY(180deg);
+}
+
+.remplissage {
+  fill: var(--_couleur-arriere-vague);
+}
+
+.diagonal {
+  position: relative;
+  isolation: isolate;
+}
+
+.diagonal::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  transform: skewY(-5deg);
+  background-color: var(--couleur-arriere-galerie);
+}
+
+.entete__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 3rem;
+  gap: 3rem;
+}
+
+.entete__header__texte {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  background-image: url("images/wordpress-theme.png");
+  background-repeat: no-repeat;
+  background-position: 50% 90%;
+  background-size: content;
+  text-align: center;
+  gap: 2rem;
+}
+
+.entete__header__button {
+  text-align: center;
+  padding-bottom: 10rem;
+  width: 100%;
+}
+
+@media screen and (min-width: 1100px) {
+  .entete__header__texte {
+    background-position: 100% 90%;
+    align-items: flex-start;
+  }
+  .entete__header__button {
+    text-align: left;
+  }
+}
+.footer__section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* ////////////////////////////////////////// */
+/* composants                             */
+/* ////////////////////////////////////////// */
+.sociaux {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.sociaux svg {
+  fill: red;
+}
+
+.recherche {
+  display: flex;
+  border: 1px solid #aaa;
+  justify-content: center;
+}
+
+.recherche__input {
+  display: block;
+}
+
+.section__destination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.carte {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 252.5px;
+  background-color: hsl(var(--hu1), var(--s-couleur-arriere), 75%);
+}
+
+.carte * {
+  text-align: center;
+}
+
+.carte .post-categories {
+  list-style-type: none;
+  display: flex;
+}
+
+/*
+<div id="menu" class="global  clr-agencement-primaire">
+  <a href="http://localhost:81/4w4-2024-gr2/" class="custom-logo-link" rel="home" aria-current="page"><img width="82" height="85" src="http://localhost:81/4w4-2024-gr2/wp-content/uploads/2024/03/cropped-logo.png" class="custom-logo" alt="Club de voyage" decoding="async"></a>        
+  <header class="entete__menu">
+    <label id="burger" for="chk_burger">
+      <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" color="#000"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path></svg>
+    </label>
+    <input id="chk_burger" type="checkbox">
+    <form class="recherche" role="search" method="get" action="http://localhost:81/4w4-2024-gr2/">
+    <nav class="menu-principal-container">
+      <ul id="menu-principal" class="menu">
+        <li id="menu-item-73" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-73"><a href="http://localhost:81/4w4-2024-gr2/category/aventure/">Aventure</a></li>
+        <li id="menu-item-74" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-74"><a href="http://localhost:81/4w4-2024-gr2/category/croisiere/">croisière</a></li>
+        <li id="menu-item-75" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-75"><a href="http://localhost:81/4w4-2024-gr2/category/culturel/">Culturel</a></li>
+        <li id="menu-item-76" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-76"><a href="http://localhost:81/4w4-2024-gr2/category/economique/">Économique</a></li>
+        <li id="menu-item-78" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-78"><a href="http://localhost:81/4w4-2024-gr2/category/pleine-nature/">Pleine nature</a></li>
+        <li id="menu-item-79" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-79"><a href="http://localhost:81/4w4-2024-gr2/category/repos/">Repos</a></li>
+        <li id="menu-item-80" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-80"><a href="http://localhost:81/4w4-2024-gr2/category/sport/">Sport</a></li>
+        <li id="menu-item-81" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-81"><a href="http://localhost:81/4w4-2024-gr2/category/zen/">Zen</a></li>
+      </ul>
+    </nav>            
+  <label>
+    <input class="recherche__input" type="search" placeholder="Search..." value="" name="s">
+  </label>
+  <button class="recherche__bouton" type="submit">
+    <span class="recherche__icone"><img draggable="false" role="img" class="emoji" alt="🔍" src="https://s.w.org/images/core/emoji/15.0.3/svg/1f50d.svg"></span>
+  </button>
+</form>    
+
+        </header>
+    </div>
+*/
+.entete__menu {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  gap: 2rem;
+  justify-content: flex-start;
+  padding: 1rem 3rem;
+}
+@media screen and (min-width: 700px) {
+  .entete__menu {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+  }
+}
+
+.menu-principal-container {
+  position: absolute;
+  top: 100px;
+  right: -150px;
+  z-index: 2;
+}
+@media screen and (min-width: 700px) {
+  .menu-principal-container {
+    position: static;
+  }
+}
+
+#menu-principal {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+@media screen and (min-width: 700px) {
+  #menu-principal {
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+
+#chk_burger {
+  display: none;
+}
+
+#burger {
+  display: block;
+  transform: translateY(-5px);
+}
+@media screen and (min-width: 700px) {
+  #burger {
+    display: none;
+  }
+}
+
+#chk_burger:checked ~ .menu-principal-container {
+  right: 0;
 }/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,105 @@
+/*
+<div id="menu" class="global  clr-agencement-primaire">
+  <a href="http://localhost:81/4w4-2024-gr2/" class="custom-logo-link" rel="home" aria-current="page"><img width="82" height="85" src="http://localhost:81/4w4-2024-gr2/wp-content/uploads/2024/03/cropped-logo.png" class="custom-logo" alt="Club de voyage" decoding="async"></a>        
+  <header class="entete__menu">
+    <label id="burger" for="chk_burger">
+      <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" color="#000"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path></svg>
+    </label>
+    <input id="chk_burger" type="checkbox">
+    <form class="recherche" role="search" method="get" action="http://localhost:81/4w4-2024-gr2/">
+    <nav class="menu-principal-container">
+      <ul id="menu-principal" class="menu">
+        <li id="menu-item-73" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-73"><a href="http://localhost:81/4w4-2024-gr2/category/aventure/">Aventure</a></li>
+        <li id="menu-item-74" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-74"><a href="http://localhost:81/4w4-2024-gr2/category/croisiere/">croisière</a></li>
+        <li id="menu-item-75" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-75"><a href="http://localhost:81/4w4-2024-gr2/category/culturel/">Culturel</a></li>
+        <li id="menu-item-76" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-76"><a href="http://localhost:81/4w4-2024-gr2/category/economique/">Économique</a></li>
+        <li id="menu-item-78" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-78"><a href="http://localhost:81/4w4-2024-gr2/category/pleine-nature/">Pleine nature</a></li>
+        <li id="menu-item-79" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-79"><a href="http://localhost:81/4w4-2024-gr2/category/repos/">Repos</a></li>
+        <li id="menu-item-80" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-80"><a href="http://localhost:81/4w4-2024-gr2/category/sport/">Sport</a></li>
+        <li id="menu-item-81" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-81"><a href="http://localhost:81/4w4-2024-gr2/category/zen/">Zen</a></li>
+      </ul>
+    </nav>            
+  <label>
+    <input class="recherche__input" type="search" placeholder="Search..." value="" name="s">
+  </label>
+  <button class="recherche__bouton" type="submit">
+    <span class="recherche__icone"><img draggable="false" role="img" class="emoji" alt="🔍" src="https://s.w.org/images/core/emoji/15.0.3/svg/1f50d.svg"></span>
+  </button>
+</form>    
+   
+        </header>
+    </div>
+*/
+
+.entete__menu{
+  display : flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+ gap : 2rem; 
+ justify-content: flex-start;
+  padding : 1rem 3rem;
+  @media screen and (min-width:700px) {
+    flex-direction: column;
+  justify-content: center;
+
+  align-items: flex-end;
+  
+  }
+}
+
+.menu-principal-container { //nav
+    // border :  1px solid #aaa;
+    position: absolute;
+    top:100px;
+    right:-150px;
+    z-index: 2;
+    // transform : translateX(500%);
+    @media screen and (min-width:700px) {
+      position: static;
+     // transform : translateX(0);
+}
+}
+
+#menu-principal{ // ul
+ display : flex;
+ flex-direction: column;
+ list-style-type: none;
+ justify-content: flex-start;
+ align-items: flex-start;
+ @media screen and (min-width:700px) {
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1rem;
+ }
+
+}
+.menu-item{ //li
+
+}
+
+.menu-item a{ //li a
+
+}
+
+
+#chk_burger{
+  display: none;
+}
+
+#burger {
+  display: block;
+  transform: translateY(-5px);
+  // position: absolute;
+  // top:0;
+  // right:0;
+  @media screen and (min-width:700px) {
+    display : none;
+  }
+}  
+
+
+#chk_burger:checked ~ .menu-principal-container {
+  // transform : translateX(0);
+  right : 0;
+}
